@@ -1297,7 +1297,7 @@ The Risle is another river in Picardy and shares its estuary with the Seine.
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1204782)
 
-![Risle](./img/Risle.png)
+![Risle](./img/risle.png)
 
 **How to locate**: If you can find the estuary of the Seine (as a reminder: right south of Le Havre, west of Rouen), you can find the Risle which is dwarfed by the Seine at [Berville-sur-Mer](https://www.google.com/maps/@49.4417422,0.365008,13.86z).
 
