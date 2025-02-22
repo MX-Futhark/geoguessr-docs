@@ -35,6 +35,12 @@ For example, [Cherbourg](https://www.google.com/maps/place/Cherbourg-en-Cotentin
 For example, there are no toponyms based on the [Semois](https://en.wikipedia.org/wiki/Semois) in France, but there are a few towns in Wallonia named after it such as [Vresse-sur-Semois](https://www.google.com/maps/place/5550+Vresse-sur-Semois,+Belgium), although this particular river would not have made the list regardless.
 Likewise, the numbers below are underestimated for a few rivers that did make the list. For example, the Meuse can frequently be found in Dutch toponyms ([famously](https://en.wikipedia.org/wiki/Maastricht_Treaty), [Maastricht](https://www.google.com/maps/place/Maastricht,+Netherlands)).
 3. Much like there are dozens of "Springfield"s in the USA, river names in France are not necessarily unique. As you will see, there are multiple instances where the `<river>` part in `<place>-sur-<river>` may refer to separate streams. In such cases, all homonyms are listed under the same entry if the sum of relevant communes reaches the threshold.
+4. Official commune names do not necessarily match the name under which they are found on Streetview:
+   - Communes are regularly updated, therefore recently created one such as [Saint-Ouen-sur-Seine](https://www.google.com/maps/place/93400+Saint-Ouen-sur-Seine) may not yet appear on Streetview.
+     Conversely, recently removed ones such as [Motey-sur-Saône](https://www.google.com/maps/place/Motey-sur-Sa%C3%B4ne,+70130+Seveux-Motey) can still show up (and may still exist as a town rather than a commune).
+   - Signage may use a town's traditional name rather that its official commune name.
+     For example, [Grenade](https://www.google.com/maps/place/31330+Grenade) is often called Grenade-sur-Garonne, the latter being used in [signage](https://maps.app.goo.gl/yscUqKHe9RRfrwtd7).
+     On the contrary, signs for [Saulce-sur-Rhône](https://www.google.com/maps/place/26270+Saulce-sur-Rh%C3%B4ne) often [do away with -sur-Rhône](https://maps.app.goo.gl/4rWU3QXcHPNDyRU59).
 
 ## Structure
 
