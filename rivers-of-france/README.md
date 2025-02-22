@@ -10,9 +10,9 @@ _If you find a mistake in this document (typo, broken link, anything) or the map
 
 It is common knowledge among GeoGuessr players that town names in France are commonly named after rivers. In fact, over one in twenty town name in France ends with `-sur-<river>` (meaning `on <river>`). The general consensus is to at least learn the course of the [Seine](https://en.wikipedia.org/wiki/Seine), [Loire](https://en.wikipedia.org/wiki/Loire), [Rhône](https://en.wikipedia.org/wiki/Rh%C3%B4ne), [Garonne](https://en.wikipedia.org/wiki/Garonne), and sometimes the [Marne](https://en.wikipedia.org/wiki/Marne_(river)) to cover one's bases. However, while those are undoubtably some of the most famous rivers in France, it doesn't mean that they are the ones that show up the most in place names.
 
-Here is a map of how many towns whose name ends with `-sur-<river>` can be found in each department:
+Here is a map of where towns whose name ends with `-sur-<river>` are located:
 
-![Frenquency of -sur-river commune names](./img/_count.png)
+![Location of -sur-river commune names](./img/communes.png)
 
 As you can see, the north (and especially the northeast) uses this naming pattern much more often than the south. As the data below will show in more details, how likely it is for a river to show up in a town name is not entirely correlated to its length but rather depends on local naming traditions. For example, there are 13 -sur-Rhône towns in the entirety of France, but 43 -sur-Meuse towns. This is depite the fact that the French section of the Rhône is 545 km long, while the French section of the [Meuse](https://en.wikipedia.org/wiki/Meuse) is 486 km long.
 
@@ -20,7 +20,7 @@ You may have also noticed (or you may already know) that many departments are na
 
 This document provides a list of rivers from most to least useful based on how many towns are named after them, complete with informative links, image of the course of the river, and how to efficiently locate it and scan for towns on Google Maps. If you want to up your France game, I believe learning this list (or even just the top entries) can only make you a better player.
 
-If this sounds too tedious to you, just memorize the map above. If you find a town called Something-sur-River-that-you-don't-know, plonking somewhere east of Paris is a better hedge than label-clicking.
+If this sounds too tedious to you, just remember the gist of the map above. If you find a town called Something-sur-River-that-you-don't-know, plonking somewhere east of Paris is a better hedge than label-clicking.
 
 ## Methodology
 
@@ -101,7 +101,7 @@ Unsurprisingly, the most famous river in France reaches the top of the list, wit
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/962076)
 
-![Seine](./img/seine.png)
+![Seine](./img/courses/seine.png)
 
 **How to locate**: If you know where Paris is, you already know where the Seine is. But if you want to scan upstream from where it flows into the English Channel, then look [south of Le Havre in Normandy](https://www.google.com/maps/@49.4534515,0.130091,11.51z), just west of Rouen.
 
@@ -210,7 +210,7 @@ Unsurprinsingly again, the longest river in France also has a high number of tow
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/132818)
 
-![Loire](./img/loire.png)
+![Loire](./img/courses/loire.png)
 
 **How to locate**: The Loire flows into the [Bay of Biscay](https://en.wikipedia.org/wiki/Bay_of_Biscay); its estuary is located [just south of Saint-Nazaire](https://www.google.com/maps/@47.2653434,-2.246528,11.03z) (to the west of Nantes).
 
@@ -315,7 +315,7 @@ The Marne completes the podium as the main tributary of the Seine, and is perhap
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1075837)
 
-![Marne](./img/marne.png)
+![Marne](./img/courses/marne.png)
 
 **How to locate**: The Marne flows into the Seine just outside of Paris. Look [northwest of the label for Créteil](https://www.google.com/maps/@48.8049268,2.4282408,14.43z).
 
@@ -398,7 +398,7 @@ This is where we start to deviate from common knowledge. We would expect the Rh�
 
 **Course**: [main](https://www.openstreetmap.org/relation/1075197), [Bergsche Maas](https://www.openstreetmap.org/relation/1316759#map=12/51.7269/5.0148), [Afgedamde Maas](https://www.openstreetmap.org/relation/13064309) (OpenStreetMap)
 
-![Meuse](./img/meuse.png)
+![Meuse](./img/courses/meuse.png)
 
 **How to locate**: The Meuse flows into the North Sea though the messy [Rhine-Meuse-Scheldt delta](https://en.wikipedia.org/wiki/Rhine%E2%80%93Meuse%E2%80%93Scheldt_delta), which is not practical to start from for scanning purposes. Prefer looking for the prominent [pointe de Givet](https://en.wikipedia.org/wiki/Pointe_de_Givet) at the [Belgian border](https://www.google.com/maps/@50.0418558,4.7810225,11.03z), then follow upstream southwards. (Or downstream northwards if you found a Maas-based name in the Netherlands. Note that there are zero Belgian toponyms based on the Meuse.)
 
@@ -467,7 +467,7 @@ The Saône is the longest tributary of the Rhône (which we won't see before a w
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1075434)
 
-![Saône](./img/saone.png)
+![Saône](./img/courses/saone.png)
 
 **How to locate**: That's an easy one: the Saône flows into the Rhône at Lyon, in the [southern part of the city](https://www.google.com/maps/@45.7431667,4.8089276,13.94z).
 
@@ -529,7 +529,7 @@ The Sarthe is a major (indirect) tributary of the Loire, and people in the epony
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1083441)
 
-![Sarthe](./img/sarthe.png)
+![Sarthe](./img/courses/sarthe.png)
 
 **How to locate**: The Sarthe converges with the [Mayenne](https://en.wikipedia.org/wiki/Mayenne_(river)) right [north of Angers](https://www.google.com/maps/@47.4907306,-0.5434067,14.43z) (to the east of Nantes) to form the [Maine](https://en.wikipedia.org/wiki/Maine_(river)), which flows for just 11km before reaching the Loire.
 
@@ -578,7 +578,7 @@ Fortunately, its modern name includes [the peninsula](https://en.wikipedia.org/w
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/4491152)
 
-![Cher](./img/cher.png)
+![Cher](./img/courses/cher.png)
 
 **How to locate**: The Cher flows into the Loire [just west of Tours](https://www.google.com/maps/@47.3423505,0.4647567,12.49z) (east of Angers, itself east of Nantes).
 
@@ -625,7 +625,7 @@ The Aube is one of the main tributaries of the Seine, with the beginning of whic
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1107675)
 
-![Aube](./img/aube.png)
+![Aube](./img/courses/aube.png)
 
 **How to locate**: Probably the most inconvenient river to locate. Zoom on Troyes (south of Reims) until Romilly-sur-Seine appears on the map northwest of it. Then zoom there until Conflans-sur-Seine appears northwest of it, again. The next town to the east is called [Marcilly-sur-Seine](https://www.google.com/maps/@48.5577643,3.7097397,15.89z), which is where the Aube flows into the Seine. Note that the Aube appears **wider** than the Seine there.
 
@@ -672,7 +672,7 @@ Now things start to get messy. There are two Seilles, one is a tributary of the 
 
 **Course**: [tributary of the Moselle](https://www.openstreetmap.org/relation/1263866), [tributary of the Saône](https://www.openstreetmap.org/relation/1115813) (OpenStreetMap)
 
-![TODO](./img/seille.png)
+![TODO](./img/courses/seille.png)
 
 **How to locate**: The first Seille flows into the Moselle in [the northeastern part of Metz](https://www.google.com/maps/@49.1256475,6.1850844,16.97z). The second, less useful Seille can be found by looking for Mâcon (north of Lyon) then following the Saône until it [diverges from the administrative border](https://www.google.com/maps/@46.5200595,4.9332144,15.12z), close to La Truchère.
 
@@ -722,7 +722,7 @@ The Vienne is one of the main tributaries of the Loire.
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1075841)
 
-![Vienne](./img/vienne.png)
+![Vienne](./img/courses/vienne.png)
 
 **How to locate**: Look for Saumur, southeast of Angers (east of Nantes). The Vienne flows into the Loire [under the label for Parc naturel régional Loire-Anjou-Touraine](https://www.google.com/maps/@47.2055491,0.0457026,12.79z) just upstream of Saumur.
 
@@ -765,7 +765,7 @@ The Moselle is a tributary of the Rhine. You probably already know what some of 
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/390416)
 
-![Moselle](./img/moselle.png)
+![Moselle](./img/courses/moselle.png)
 
 **How to locate**: The Moselle flows downstream from France until the [France-Germany-Luxembourg tripoint](https://www.google.com/maps/@49.4670246,6.3524213,14.15z) at Schengen (yes, [that Schengen](https://en.wikipedia.org/wiki/Schengen_Agreement)).
 
@@ -807,7 +807,7 @@ The Yonne is another major tributary of the Seine and mostly flows through weste
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1070961)
 
-![Yonne](./img/yonne.png)
+![Yonne](./img/courses/yonne.png)
 
 **How to locate**: Zoom into Paris until you see Fontainebleau southeast of it. Then zoom again until you see [Montereau](https://www.google.com/maps/@48.3851192,2.9646158,14.22z) just east of Fontainebleau. This is where the Yonne flows into the Seine. Much like the Aube, it appears **wider** than the Seine there.
 
@@ -848,7 +848,7 @@ The Oise is a major tributary of the Seine, the only one to take its source in B
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1083417)
 
-![Oise](./img/oise.png)
+![Oise](./img/courses/oise.png)
 
 **How to locate**: The Oise flows into the Seine at Maurecourt just northwest of Paris, [south of the label for Cergy](https://www.google.com/maps/@48.9883677,2.064745,12.69z).
 
@@ -889,7 +889,7 @@ Despite being one of the major rivers of France (although it takes its source in
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/70423)
 
-![Garonne](./img/garonne.png)
+![Garonne](./img/courses/garonne.png)
 
 **How to locate**: The Garonne flows into the unmissable [Gironde estuary](https://en.wikipedia.org/wiki/Gironde_estuary) alongside the [Dordogne](https://en.wikipedia.org/wiki/Dordogne_(river)). [Where they meet](https://www.google.com/maps/@45.0043955,-0.6289374,12.21z), the Garonne is to the west of the Dordogne.
 
@@ -933,7 +933,7 @@ Another Seille situation: the longer Orne is a river in Normandy; the shorter on
 
 **Course**: [river in Normandy](https://www.openstreetmap.org/relation/1075690), [tributary of the Moselle](https://www.openstreetmap.org/relation/1111462) (OpenStreetMap)
 
-![Orne](./img/orne.png)
+![Orne](./img/courses/orne.png)
 
 **How to locate**: The most useful Orne flows into the English Channel [north of Caen](https://www.google.com/maps/@49.2568104,-0.2888111,11.72z). The other one flows into the Moselle [where the A30 meets the A31](https://www.google.com/maps/@49.2818311,6.1770404,14.15z), just northeast of Amnéville, north of Metz.
 
@@ -978,7 +978,7 @@ The Eure is yet another tributary of the Seine, located some distance west of Pa
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1083661)
 
-![Eure](./img/eure.png)
+![Eure](./img/courses/eure.png)
 
 **How to locate**: The Eure flows into the Seine [just east of Elbeuf](https://www.google.com/maps/@49.2977161,1.0230374,13.67z), south of Rouen.
 
@@ -1016,7 +1016,7 @@ It's been a while since we haven't had a tributary of the Loire. The Allier is p
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1075830)
 
-![Allier](./img/allier.png)
+![Allier](./img/courses/allier.png)
 
 **How to locate**: The Allier flows into the Loire [southwest of Nevers](https://www.google.com/maps/@46.9915844,3.1173095,12.69z), to the east of Bourges (south of Paris, right above the label for France).
 
@@ -1055,7 +1055,7 @@ The final major river and the last one of its kind in this list. There are relat
 
 **Course**: [main & Great Rhône](https://www.openstreetmap.org/relation/1075117), [Little Rhône](https://www.openstreetmap.org/relation/6948088) (OpenStreetMap)
 
-![Rhône](./img/rhone.png)
+![Rhône](./img/courses/rhone.png)
 
 **How to locate**: Since the Rhône splits into the Great Rhône and the Little Rhône in [Camargue](https://en.wikipedia.org/wiki/Camargue), it is more practical to locate it by following it downstream from [Lake Geneva](https://en.wikipedia.org/wiki/Lake_Geneva), which is located [exactly where you would expect](https://www.google.com/maps/@46.209537,6.1382542,13.18z). Note that no Swiss toponyms are named after the Rhône.
 
@@ -1099,7 +1099,7 @@ The Aisne is a tributary of the Oise, which it even beats in length. It flows cl
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1075850)
 
-![Aisne](./img/aisne.png)
+![Aisne](./img/courses/aisne.png)
 
 **How to locate**: The Aisne flows into the Oise at [Compiègne](https://www.google.com/maps/@49.433168,2.84817,13.83z), where it appears **wider** than its mainstem. Compiègne is located northeast of Paris and west of Reims, roughly equidistant to both cities.
 
@@ -1137,7 +1137,7 @@ Now obscure rivers start to make their appearance. The Ouche is a tributary of t
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1113540)
 
-![Ouche](./img/ouche.png)
+![Ouche](./img/courses/ouche.png)
 
 **How to locate**: The Ouche is confusing to follow upstream [from the Saône](https://www.google.com/maps/@47.1079468,5.2818796,15.06z) because it appears very narrow on the map and there are many other small rivers in the same area. However, all -sur-Ouche towns are located upstream of Dijon, [through which](https://www.google.com/maps/@47.3173908,5.0146603,14.85z) the Ouche flows, so I recommend scanning upstream (westwards) from there instead.
 
@@ -1171,7 +1171,7 @@ The Somme is a river in Picardy, one of many to flow into the English Channel. U
 
 **Course**: river in Picardy: [source to first canal](https://www.openstreetmap.org/relation/1599269), [first canal onwards](https://www.openstreetmap.org/relation/1162695) (OpenStreetMap), [tributary of the Loire](https://www.sandre.eaufrance.fr/geo/CoursEau_Carthage2017/K16-0300) (SANDRE)
 
-![Somme](./img/somme.png)
+![Somme](./img/courses/somme.png)
 
 **How to locate**: The estuary of the rightful Somme is located [northwest of Amiens](https://www.google.com/maps/@50.1645066,1.4237011,10.18z) (north of Paris). The impostor Somme is only of interest because it gave its name to [Cressy-sur-Somme](https://www.google.com/maps/place/71760+Cressy-sur-Somme), which is annoyingly placed in the middle of nowhere. Zoom south of Parc naturel régional du Morvan, between Paris and Lyon, until the label appears close to the border between Nièvre and Saône-et-Loire.
 
@@ -1209,7 +1209,7 @@ The Essonne is a relatively short tributary of the Seine that flows just south o
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1104573)
 
-![Essonne](./img/essonne.png)
+![Essonne](./img/courses/essonne.png)
 
 **How to locate**: The Essonne flows into the Seine at [Corbeille-Essonnes](https://www.google.com/maps/@48.6115557,2.4776275,15.87z) (which is not part of the list below!). You can find it by zooming into Paris until Melun appears southeast of it, then zooming further in this area until the label for Corbeille-Essonnes appears between Paris and Melun.
 
@@ -1245,7 +1245,7 @@ The Saulx is a tributary of the Marne. Be careful: it is also part of the name o
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1267377)
 
-![Saulx](./img/saulx.png)
+![Saulx](./img/courses/saulx.png)
 
 **How to locate**: Zoom into Troyes (south of Reims) until Vitry-le-François appears northeast of it. The Saulx flows into the Marne [right north of the town](https://www.google.com/maps/@48.7398076,4.5795815,14.67z).
 
@@ -1281,7 +1281,7 @@ The Orge is both the name of a short tributary of the Seine, and annoyingly, the
 
 **Course**: [tributary of the Seine](https://www.openstreetmap.org/relation/1113571) (OpenStreetMap), [tributary of the Saulx](https://www.sandre.eaufrance.fr/geo/CoursEau_Carthage2017/F5510600) (SANDRE)
 
-![Orge](./img/orge.png)
+![Orge](./img/courses/orge.png)
 
 **How to locate**: The big sister flows into the Seine at [Athis-Mons](https://www.google.com/maps/@48.7109379,2.3971579,15.5z), south of Orly airport (right south of Paris). The little sister is only of interest because of [Biencourt-sur-Orge](https://www.google.com/maps/place/55290+Biencourt-sur-Orge). Zoom between Nancy and Troyes, then on Saint-Dizier until Montiers-sur-Saulx appears to its southeast. Biencourt-sur-Orge is located just northeast of it.
 
@@ -1319,7 +1319,7 @@ The Risle is another river in Picardy and shares its estuary with the Seine.
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1204782)
 
-![Risle](./img/risle.png)
+![Risle](./img/courses/risle.png)
 
 **How to locate**: If you can find the estuary of the Seine (as a reminder: right south of Le Havre, west of Rouen), you can find the Risle which is dwarfed by the Seine at [Berville-sur-Mer](https://www.google.com/maps/@49.4417422,0.365008,13.86z).
 
@@ -1354,7 +1354,7 @@ The Tille is a relatively short tributary of the Saône. Conveniently, it is ent
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1599283)
 
-![Tille](./img/tille.png)
+![Tille](./img/courses/tille.png)
 
 **How to locate**: Zoom into Dijon until Auxonne appears to the southeast, then follow the Saône southwards. You will shortly find the point where the Tille flows into it, [south of Les Maillys](https://www.google.com/maps/@47.1315996,5.341796,15.32z).
 
@@ -1387,7 +1387,7 @@ The Loir is a tributary of the Sarthe, itself a tributary of the Loire. It bears
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1082558)
 
-![Loir](./img/loir.png)
+![Loir](./img/courses/loir.png)
 
 **How to locate**: The Loir flows into the Sarthe [between Briollay and Écouflant](https://www.google.com/maps/@47.5485015,-0.5234623,14.24z), just north of Angers (east of Nantes)
 
@@ -1423,7 +1423,7 @@ The Indre is the final river to reach the threshold. It is a relatively long tri
 
 **Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1083512)
 
-![Indre](./img/indre.png)
+![Indre](./img/courses/indre.png)
 
 **How to locate**: The Indre flows into the Loire [just upstream of where the Vienne does](https://www.google.com/maps/@47.2278311,0.1701091,13.58z). Therefore, the same instructions apply:
 > Look for Saumur, southeast of Angers (east of Nantes). The Vienne flows into the Loire [under the label for the Parc naturel régional Loire-Anjou-Touraine](https://www.google.com/maps/@47.2055491,0.0457026,12.79z) just upstream of Saumur.
