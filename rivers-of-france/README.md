@@ -52,7 +52,38 @@ Rivers are listed from most to least useful based on the amount of towns named a
 
 ## The List
 
-### 01. Seine 🥇
+1. <a href="#spot-01">Seine</a>: 72 communes
+1. <a href="#spot-02">Loire</a>: 70 communes
+1. <a href="#spot-03">Marne</a>: 55 communes
+1. <a href="#spot-04">Meuse</a>: 43 communes
+1. <a href="#spot-05">Saône</a>: 33 communes
+1. <a href="#spot-06">Sarthe</a>: 22 communes
+1. <a href="#spot-07">Cher</a>: 21 communes
+1. <a href="#spot-08">Aube</a>: 21 communes
+1. <a href="#spot-09">Seille</a>: 19 communes (⚠ 2 separate rivers)
+1. <a href="#spot-10">Vienne</a>: 17 communes
+1. <a href="#spot-11">Moselle</a>: 17 communes
+1. <a href="#spot-12">Yonne</a>: 16 communes
+1. <a href="#spot-13">Oise</a>: 16 communes
+1. <a href="#spot-14">Garonne</a>: 16 communes
+1. <a href="#spot-15">Orne</a>: 15 communes (⚠ 2 separate rivers)
+1. <a href="#spot-16">Eure</a>: 14 communes
+1. <a href="#spot-17">Allier</a>: 13 communes
+1. <a href="#spot-18">Rhône</a>: 13 communes
+1. <a href="#spot-19">Aisne</a>: 13 communes
+1. <a href="#spot-20">Ouche</a>: 11 communes
+1. <a href="#spot-21">Somme</a>: 11 communes (⚠ 2 separate rivers)
+1. <a href="#spot-22">Essonne</a>: 11 communes
+1. <a href="#spot-23">Saulx</a>: 11 communes
+1. <a href="#spot-24">Orge</a>: 11 communes (⚠ 2 separate rivers)
+1. <a href="#spot-25">Risle</a>: 11 communes
+1. <a href="#spot-26">Tille</a>: 10 communes
+1. <a href="#spot-27">Loir</a>: 10 communes
+1. <a href="#spot-28">Indre</a>: 10 communes
+
+----------
+
+### <span id="spot-01">1. Seine 🥇</span>
 
 Unsurprisingly, the most famous river in France reaches the top of the list, with over seventy towns named after it.
 
@@ -158,7 +189,7 @@ Unsurprisingly, the most famous river in France reaches the top of the list, wit
 
 ----------
 
-### 02. Loire 🥈
+### <span id="spot-02">2. Loire 🥈</span>
 
 Unsurprinsingly again, the longest river in France also has a high number of towns named after it. The Loire (not to be confused with the Loir, which we will get to) takes the second place.
 
@@ -261,7 +292,7 @@ Unsurprinsingly again, the longest river in France also has a high number of tow
 
 ----------
 
-### 03. Marne 🥉
+### <span id="spot-03">3. Marne 🥉</span>
 
 The Marne completes the podium as the main tributary of the Seine, and is perhaps the only somewhat well-known tributary river in France (the fact that it flows into the Seine so close to Paris is probably one the reasons why).
 
@@ -344,7 +375,7 @@ The Marne completes the podium as the main tributary of the Seine, and is perhap
 
 ----------
 
-### 04. Meuse
+### <span id="spot-04">4. Meuse</span>
 
 This is where we start to deviate from common knowledge. We would expect the Rhône or the Garonne to be here but instead, the Meuse, a major but arguably lesser-known European river, sits just outside the podium, with over forty towns named after it.
 
@@ -413,7 +444,7 @@ This is where we start to deviate from common knowledge. We would expect the Rh�
 
 ----------
 
-### 05. Saône
+### <span id="spot-05">5. Saône</span>
 
 The Saône is the longest tributary of the Rhône (which we won't see before a while) and takes the next place.
 
@@ -475,7 +506,7 @@ The Saône is the longest tributary of the Rhône (which we won't see before a w
 
 ----------
 
-### 06. Sarthe
+### <span id="spot-06">6. Sarthe</span>
 
 The Sarthe is a major (indirect) tributary of the Loire, and people in the eponym department love to name their towns after it.
 
@@ -521,7 +552,7 @@ The Sarthe is a major (indirect) tributary of the Loire, and people in the epony
 
 ----------
 
-### 07. Cher
+### <span id="spot-07">7. Cher</span>
 
 The Cher is another tributary of the Loire and flows through central France.
 
@@ -568,7 +599,7 @@ The Cher is another tributary of the Loire and flows through central France.
 
 ----------
 
-### 08. Aube
+### <span id="spot-08">8. Aube</span>
 
 The Aube is one of the main tributaries of the Seine, with the beginning of which it follows a close course.
 
@@ -615,7 +646,7 @@ The Aube is one of the main tributaries of the Seine, with the beginning of whic
 
 ----------
 
-### 09. Seille
+### <span id="spot-09">9. Seille</span>
 
 Now things start to get messy. There are two Seilles, one is a tributary of the Moselle and the other one a tributary of the Saône. There are only three towns named after the latter, but you need to know they exist to avoid guessing Metz on Saône-et-Loire.
 
@@ -663,7 +694,7 @@ Tributary of the Saône (3):
 
 ----------
 
-### 10. Vienne
+### <span id="spot-10">10. Vienne</span>
 
 The Vienne is one of the main tributaries of the Loire. [The city of the same name](https://en.wikipedia.org/wiki/Vienne,_Is%C3%A8re) is unrelated to the river.
 
@@ -706,7 +737,7 @@ The Vienne is one of the main tributaries of the Loire. [The city of the same na
 
 ----------
 
-### 11. Moselle
+### <span id="spot-11">11. Moselle</span>
 
 The Moselle is a tributary of the Rhine. You probably already know what some of its course looks like since it forms a significant portion of the border between Luxembourg and Germany.
 
@@ -748,7 +779,7 @@ The Moselle is a tributary of the Rhine. You probably already know what some of 
 
 ----------
 
-### 12. Yonne
+### <span id="spot-12">12. Yonne</span>
 
 The Yonne is another major tributary of the Seine and mostly flows through western [Bourgogne-Franche-Comté](https://en.wikipedia.org/wiki/Bourgogne-Franche-Comt%C3%A9).
 
@@ -789,7 +820,7 @@ The Yonne is another major tributary of the Seine and mostly flows through weste
 
 ----------
 
-### 13. Oise
+### <span id="spot-13">13. Oise</span>
 
 The Oise is a major tributary of the Seine, the only one to take its source in Belgium.
 
@@ -830,7 +861,7 @@ The Oise is a major tributary of the Seine, the only one to take its source in B
 
 ----------
 
-### 14. Garonne
+### <span id="spot-14">14. Garonne</span>
 
 Despite being one of the major rivers of France (although it takes its source in the Spanish Pyrenees), the Garonne does not even make it into the top 10.
 
@@ -872,7 +903,7 @@ Despite being one of the major rivers of France (although it takes its source in
 
 ----------
 
-### 15. Orne
+### <span id="spot-15">15. Orne</span>
 
 Another Seille situation: the longer Orne is a river in Normandy; the shorter one is a tributary of the Moselle south of Luxembourg. Only two towns are named after the latter, but again, they are included to avoid mishaps.
 
@@ -917,7 +948,7 @@ Tributary of the Moselle (2):
 
 ----------
 
-### 16. Eure
+### <span id="spot-16">16. Eure</span>
 
 The Eure is yet another tributary of the Seine, located some distance west of Paris.
 
@@ -955,7 +986,7 @@ The Eure is yet another tributary of the Seine, located some distance west of Pa
 
 ----------
 
-### 17. Allier
+### <span id="spot-17">17. Allier</span>
 
 It's been a while since we haven't had a tributary of the Loire. The Allier is pretty damn long but doesn't give its name to that many towns for its length.
 
@@ -994,7 +1025,7 @@ It's been a while since we haven't had a tributary of the Loire. The Allier is p
 
 ----------
 
-### 18. Rhône
+### <span id="spot-18">18. Rhône</span>
 
 The final major river and the last one of its kind in this list. There are relatively few towns in France named after the Rhône.
 
@@ -1036,7 +1067,7 @@ The final major river and the last one of its kind in this list. There are relat
 
 ----------
 
-### 19. Aisne
+### <span id="spot-19">19. Aisne</span>
 
 The Aisne is a tributary of the Oise, which it even beats in length. It flows close to the Belgian border.
 
@@ -1074,7 +1105,7 @@ The Aisne is a tributary of the Oise, which it even beats in length. It flows cl
 
 ----------
 
-### 20. Ouche
+### <span id="spot-20">20. Ouche</span>
 
 Now obscure rivers start to make their appearance. The Ouche is a tributary of the Saône and has a suprising amount of towns named after it despite being shorter than 100 km.
 
@@ -1108,7 +1139,7 @@ Now obscure rivers start to make their appearance. The Ouche is a tributary of t
 
 ----------
 
-### 21. Somme
+### <span id="spot-21">21. Somme</span>
 
 The Somme is a river in Picardy, one of many to flow into the English Channel. Unfortunately, it is also the name of small tributary of the Loire after which a single town was named.
 
@@ -1146,7 +1177,7 @@ Tributary of the Loire (1):
 
 ----------
 
-### 22. Essonne
+### <span id="spot-22">22. Essonne</span>
 
 The Essonne is a relatively short tributary of the Seine that flows just south of Paris.
 
@@ -1182,7 +1213,7 @@ The Essonne is a relatively short tributary of the Seine that flows just south o
 
 ----------
 
-### 23. Saulx
+### <span id="spot-23">23. Saulx</span>
 
 The Saulx is a tributary of the Marne. Be careful: it is also part of the name of [several unrelated towns](https://en.wikipedia.org/wiki/Saulx).
 
@@ -1218,7 +1249,7 @@ The Saulx is a tributary of the Marne. Be careful: it is also part of the name o
 
 ----------
 
-### 24. Orge
+### <span id="spot-24">24. Orge</span>
 
 The Orge is both the name of a short tributary of the Seine, and annoyingly, the name of a small stream that flows into the Saulx after which is single town is named. Good news though: this is the last entry with two rivers on the list.
 
@@ -1256,7 +1287,7 @@ Tributary of the Saulx (1):
 
 ----------
 
-### 25. Risle
+### <span id="spot-25">25. Risle</span>
 
 The Risle is another river in Picardy and shares its estuary with the Seine.
 
@@ -1291,7 +1322,7 @@ The Risle is another river in Picardy and shares its estuary with the Seine.
 
 ----------
 
-### 26. Tille
+### <span id="spot-26">26. Tille</span>
 
 The Tille is a relatively short tributary of the Saône. Conveniently, it is entirely contained within the Côte-d'Or department.
 
@@ -1324,7 +1355,7 @@ The Tille is a relatively short tributary of the Saône. Conveniently, it is ent
 
 ----------
 
-### 27. Loir
+### <span id="spot-27">27. Loir</span>
 
 The Loir is a tributary of the Sarthe, itself a tributary of the Loire. It bears repeating: despite being pronounced the same, the Loir is not the Loire.
 
@@ -1360,7 +1391,7 @@ The Loir is a tributary of the Sarthe, itself a tributary of the Loire. It bears
 
 ----------
 
-### 28. Indre
+### <span id="spot-28">28. Indre</span>
 
 The Indre is the final river to reach the threshold. It is a relatively long tributary of the Loire.
 
