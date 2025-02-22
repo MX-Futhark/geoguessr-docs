@@ -556,6 +556,9 @@ The Sarthe is a major (indirect) tributary of the Loire, and people in the epony
 
 The Cher is another tributary of the Loire and flows through central France.
 
+⚠ As mentioned in the methodology section, [Cherbourg(-en-Cotentin)](https://en.wikipedia.org/wiki/Cherbourg-en-Cotentin), whose name could be parsed as Cher-town, has nothing to do with the Cher.
+Fortunately, its modern name includes [the peninsula](https://en.wikipedia.org/wiki/Cotentin_Peninsula) at the tip of which it is located.
+
 **Native names**: _le Cher_ (French)
 
 **Info**: [Wikipedia](https://en.wikipedia.org/wiki/Cher_(river))
@@ -696,7 +699,9 @@ Tributary of the Saône (3):
 
 ### <span id="spot-10">10. Vienne</span>
 
-The Vienne is one of the main tributaries of the Loire. [The city of the same name](https://en.wikipedia.org/wiki/Vienne,_Is%C3%A8re) is unrelated to the river.
+The Vienne is one of the main tributaries of the Loire.
+
+⚠ [The city of the same name](https://en.wikipedia.org/wiki/Vienne,_Is%C3%A8re) is unrelated to the river.
 
 **Native names**: _la Vienne_ (French)
 
