@@ -52,7 +52,7 @@ Rivers are listed from most to least useful based on the amount of towns named a
 
 ## The List
 
-1. <a href="#spot-01">Seine</a>: 72 communes
+1. <a href="#spot-01">Seine</a>: 71 communes
 1. <a href="#spot-02">Loire</a>: 70 communes
 1. <a href="#spot-03">Marne</a>: 55 communes
 1. <a href="#spot-04">Meuse</a>: 43 communes
@@ -97,7 +97,7 @@ Unsurprisingly, the most famous river in France reaches the top of the list, wit
 
 **How to locate**: If you know where Paris is, you already know where the Seine is. But if you want to scan upstream from where it flows into the English Channel, then look [south of Le Havre in Normandy](https://www.google.com/maps/@49.4534515,0.130091,11.51z), just west of Rouen.
 
-**Communes** (72):
+**Communes** (71):
 <details>
 <summary>Click me</summary>
 
@@ -168,10 +168,6 @@ Unsurprisingly, the most famous river in France reaches the top of the list, wit
   * Courcelles-sur-Seine
   * Criquebeuf-sur-Seine
   * Quillebeuf-sur-Seine
-- Seine-Saint-Denis
-  * Épinay-sur-Seine
-  * Pierrefitte-sur-Seine
-  * Saint-Ouen-sur-Seine
 - Val-de-Marne
   * Ablon-sur-Seine
   * Ivry-sur-Seine
@@ -182,6 +178,9 @@ Unsurprisingly, the most famous river in France reaches the top of the list, wit
 - Hauts-de-Seine
   * Asnières-sur-Seine
   * Neuilly-sur-Seine
+- Seine-Saint-Denis
+  * Épinay-sur-Seine
+  * Saint-Ouen-sur-Seine
 - Val-d'Oise
   * La Frette-sur-Seine
   * Herblay-sur-Seine
@@ -1431,6 +1430,6 @@ The Indre is the final river to reach the threshold. It is a relatively long tri
 
 ## Conclusion
 
-As of January 2025, there were 34805 communes in metropolitan France, 1897 of which followed the `<place>-sur-<river>` pattern, and 602 of which made the above list. In other words, learning the location of the aforementioned rivers will assist you in regionguessing panoramas that include a commune name 1.73% of the time. While it sounds disappointingly low, the odds of seeing such place names are compounded in moving games, which is where learning these rivers will come in handy most of the time.
+As of January 2025, there were 34804 communes in metropolitan France, 1896 of which followed the `<place>-sur-<river>` pattern, and 601 of which made the above list. In other words, learning the location of the aforementioned rivers will assist you in regionguessing panoramas that include a commune name 1.73% of the time. While it sounds disappointingly low, the odds of seeing such place names are compounded in moving games, which is where learning these rivers will come in handy most of the time.
 
 If you made it to the end, congratulations and thank you for taking the time to read it all! If this document can help even just of few people improve at France, I would consider my duty done.
