@@ -2,7 +2,9 @@
 
 **By [MX-Futhark](https://www.geoguessr.com/user/5e6bccf53730754da880600a)**
 
-_If you find a mistake in this document (typo, broken link, anything), feel free to file an issue. Contributions will be mentioned above._
+**Training map [here](https://www.geoguessr.com/maps/679b68640a525f3e44d08b21).**
+
+_If you find a mistake in this document (typo, broken link, anything) or the map (broken location, unofficial coverage…), feel free to file an issue. Contributions will be mentioned above._
 
 ## Introduction
 
@@ -161,8 +163,8 @@ Unsurprisingly, the most famous river in France reaches the top of the list, wit
 - Seine-Maritime
   * Berville-sur-Seine
   * Hautot-sur-Seine
-  * Oissel-sur-Seine
-  * Port-Jérôme-sur-Seine
+  * Oissel-sur-Seine ⁽¹⁾
+  * Port-Jérôme-sur-Seine ⁽²⁾
   * Yville-sur-Seine
 - Essonne
   * Morsang-sur-Seine
@@ -186,10 +188,14 @@ Unsurprisingly, the most famous river in France reaches the top of the list, wit
   * Neuilly-sur-Seine
 - Seine-Saint-Denis
   * Épinay-sur-Seine
-  * Saint-Ouen-sur-Seine
+  * Saint-Ouen-sur-Seine ⁽³⁾
 - Val-d'Oise
   * La Frette-sur-Seine
   * Herblay-sur-Seine
+
+⁽¹⁾ Not in the training map (Oissel before 2025)  
+⁽²⁾ Not in the training map (created on 2016-01-01; nowhere to be found in signage)  
+⁽³⁾ Not in the training map (Saint-Ouen before November 2018; entry signs have yet to be updated)
 </details>
 
 ----------
@@ -290,9 +296,11 @@ Unsurprinsingly again, the longest river in France also has a high number of tow
   * Pierrefitte-sur-Loire
 - Loire
   * Saint-Jean-Saint-Maurice-sur-Loire
-  * Vézelin-sur-Loire
+  * Vézelin-sur-Loire ⁽¹⁾
 - Cher
   * Belleville-sur-Loire
+
+⁽¹⁾ Not in the training map (created on 2019-01-01; most recent Streetview data in this area dates back from 2018 at best)
 </details>
 
 ----------
@@ -904,11 +912,13 @@ Despite being one of the major rivers of France (although it takes its source in
   * Saint-Julien-sur-Garonne
   * Salles-sur-Garonne
 - Gironde
-  * Cadillac-sur-Garonne
+  * Cadillac-sur-Garonne ⁽¹⁾
   * Lestiac-sur-Garonne
   * Le Pian-sur-Garonne
 - Tarn-et-Garonne
   * Verdun-sur-Garonne
+
+⁽¹⁾ Not in the training map (Cadillac before 2023; signage has yet to be updated even in recent coverage)
 </details>
 
 ----------
@@ -1072,7 +1082,9 @@ The final major river and the last one of its kind in this list. There are relat
 - Loire
   * Saint-Michel-sur-Rhône
 - Métropole de Lyon
-  * Grigny-sur-Rhône
+  * Grigny-sur-Rhône ⁽¹⁾
+
+⁽¹⁾ Not in the training map (Grigny before 2025)
 </details>
 
 ----------
