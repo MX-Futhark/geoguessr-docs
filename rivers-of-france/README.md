@@ -22,7 +22,7 @@ If this sounds too tedious to you, just memorize the map above. If you find a to
 
 ## Methodology
 
-The names of all [communes](https://en.wikipedia.org/wiki/Communes_of_France) (municipalities) in [metropolitan France](https://en.wikipedia.org/wiki/Metropolitan_France) following the pattern `<place>-sur-<river>` were taken into account, and filtered to only keep the rivers featured in ten names of more.
+The names of all [communes](https://en.wikipedia.org/wiki/Communes_of_France) (municipalities) in [metropolitan France](https://en.wikipedia.org/wiki/Metropolitan_France) following the pattern `<place>-sur-<river>` were taken into account, and filtered to only keep the rivers featured in ten names or more.
 Some places follow this naming pattern but are not actually named after rivers. Typically, "-sur-Mer" means "on the sea". This is useful to know as a player since it indicates a coastal town, but for the purpose of this document, this suffix was excluded. There are other, rarer cases such as [Villers-sur-Port](https://www.google.com/maps/place/70170+Villers-sur-Port) which would be better called Villers-[lès](https://en.wiktionary.org/wiki/l%C3%A8s)-Port since it neighbors [Port-sur-Saône](https://www.google.com/maps/place/70170+Port-sur-Sa%C3%B4ne) and is in fact not named after a body of water at all. Such names were not excluded when cramming the data because it is difficult to detect them, but as far as I can tell none of them made the cut anyway.
 
 ### Caveats
@@ -48,7 +48,7 @@ Rivers are listed from most to least useful based on the amount of towns named a
 
 **How to locate**: How to find and scan the river on Google Maps. This normally involves finding where it flows into the sea or another river then scanning upstream, since it is much more difficult to find a tiny stream at the source then following it downstream. However, there are exceptions to this rule. Also, be careful not to branch towards a tributary river by accident: some of them appear wider than the main stream on the map where they meet, which can trip you up when scanning upstream.
 
-**Communes**: An collapsible list of communes named after the river, with the total amount between parentheses. The communes are categorized by departments, sorted by amount of relevant communes. You are not expected to memorize the communes (not that I am forbiding you from trying), but they are provided for the sake of completeness.
+**Communes**: A collapsible list of communes named after the river, with the total amount between parentheses. The communes are categorized by departments, sorted by amount of relevant communes. You are not expected to memorize the communes (not that I am forbiding you from trying), but they are provided for the sake of completeness.
 
 ## The List
 
@@ -791,7 +791,7 @@ The Yonne is another major tributary of the Seine and mostly flows through weste
 
 ![Yonne](./img/yonne.png)
 
-**How to locate**: Zoom into Paris until you see Fontainebleau southeast of it. Then zoom again until you see [Montereau](https://www.google.com/maps/@48.3851192,2.9646158,14.22z) just east of Fontainebleau. This is where the Yonne flows into the Seinne. Much like the Aube, it appears **wider** than the Seine there.
+**How to locate**: Zoom into Paris until you see Fontainebleau southeast of it. Then zoom again until you see [Montereau](https://www.google.com/maps/@48.3851192,2.9646158,14.22z) just east of Fontainebleau. This is where the Yonne flows into the Seine. Much like the Aube, it appears **wider** than the Seine there.
 
 **Communes** (16):
 <details>
