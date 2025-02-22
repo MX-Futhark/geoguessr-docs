@@ -650,7 +650,7 @@ The Aube is one of the main tributaries of the Seine, with the beginning of whic
 
 ### <span id="spot-09">9. Seille</span>
 
-Now things start to get messy. There are two Seilles, one is a tributary of the Moselle and the other one a tributary of the Saône. There are only three towns named after the latter, but you need to know they exist to avoid guessing Metz on Saône-et-Loire.
+Now things start to get messy. There are two Seilles, one is a tributary of the Moselle and the other one a tributary of the Saône. A third of the relevant towns is named after the latter, so you need to know they exist to avoid guessing Metz on Saône-et-Loire.
 
 **Native names**: _la Seille_ (French)
 
@@ -666,7 +666,7 @@ Now things start to get messy. There are two Seilles, one is a tributary of the 
 <details>
 <summary>Click me</summary>
 
-Tributary of the Moselle (16):
+Tributary of the Moselle (12):
 - Meurthe-et-Moselle
   * Bey-sur-Seille
   * Brin-sur-Seille
@@ -681,13 +681,13 @@ Tributary of the Moselle (16):
   * Haraucourt-sur-Seille
   * Malaucourt-sur-Seille
   * Vic-sur-Seille
+
+Tributary of the Saône (7):
 - Jura
   * Blois-sur-Seille
   * Ladoye-sur-Seille
   * Nevy-sur-Seille
   * Ruffey-sur-Seille
-
-Tributary of the Saône (3):
 - Saône-et-Loire
   * Huilly-sur-Seille
   * Savigny-sur-Seille
