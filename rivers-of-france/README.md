@@ -56,12 +56,12 @@ Rivers are listed from most to least useful based on the amount of towns named a
 
 **How to locate**: How to find and scan the river on Google Maps. This normally involves finding where it flows into the sea or another river then scanning upstream, since it is much more difficult to find a tiny stream at the source then following it downstream. However, there are exceptions to this rule. Also, be careful not to branch towards a tributary river by accident: some of them appear wider than the main stream on the map where they meet, which can trip you up when scanning upstream.
 
-**Communes**: A collapsible list of communes named after the river, with the total amount between parentheses. The communes are categorized by departments, sorted by amount of relevant communes. You are not expected to memorize the communes (not that I am forbiding you from trying), but they are provided for the sake of completeness.
+**Communes**: A collapsible list of communes named after the river, with the total amount between parentheses. The communes are categorized by departments, sorted by amount of relevant communes. You are not expected to memorize the communes (not that I am forbidding you from trying), but they are provided for the sake of completeness.
 
 ## The List
 
 1. <a href="#spot-01">Seine</a>: 71 communes
-1. <a href="#spot-02">Loire</a>: 70 communes
+1. <a href="#spot-02">Loire</a>: 71 communes
 1. <a href="#spot-03">Marne</a>: 55 communes
 1. <a href="#spot-04">Meuse</a>: 43 communes
 1. <a href="#spot-05">Saône</a>: 33 communes
@@ -79,15 +79,16 @@ Rivers are listed from most to least useful based on the amount of towns named a
 1. <a href="#spot-17">Allier</a>: 13 communes
 1. <a href="#spot-18">Rhône</a>: 13 communes
 1. <a href="#spot-19">Aisne</a>: 13 communes
-1. <a href="#spot-20">Ouche</a>: 11 communes
-1. <a href="#spot-21">Somme</a>: 11 communes (⚠ 2 separate rivers)
-1. <a href="#spot-22">Essonne</a>: 11 communes
-1. <a href="#spot-23">Saulx</a>: 11 communes
-1. <a href="#spot-24">Orge</a>: 11 communes (⚠ 2 separate rivers)
-1. <a href="#spot-25">Risle</a>: 11 communes
-1. <a href="#spot-26">Tille</a>: 10 communes
-1. <a href="#spot-27">Loir</a>: 10 communes
-1. <a href="#spot-28">Indre</a>: 10 communes
+1. <a href="#spot-20">Risle</a>: 12 communes
+1. <a href="#spot-21">Ouche</a>: 11 communes
+1. <a href="#spot-22">Somme</a>: 11 communes (⚠ 2 separate rivers)
+1. <a href="#spot-23">Loir</a>: 11 communes
+1. <a href="#spot-24">Essonne</a>: 11 communes
+1. <a href="#spot-25">Saulx</a>: 11 communes
+1. <a href="#spot-26">Orge</a>: 11 communes (⚠ 2 separate rivers)
+1. <a href="#spot-27">Seulles</a>: 11 communes
+1. <a href="#spot-28">Tille</a>: 10 communes
+1. <a href="#spot-29">Indre</a>: 10 communes
 
 ----------
 
@@ -200,9 +201,9 @@ Unsurprisingly, the most famous river in France reaches the top of the list, wit
 
 ----------
 
-### <span id="spot-02">2. Loire 🥈</span>
+### <span id="spot-02">2. Loire 🥇</span>
 
-Unsurprinsingly again, the longest river in France also has a high number of towns named after it. The Loire (not to be confused with the Loir, which we will get to) takes the second place.
+Unsurprinsingly again, the longest river in France also has a high number of towns named after it. The Loire (not to be confused with the Loir, which we will get to) shares the top spot with the Seine.
 
 **Native names**: _la Loire_ (French)
 
@@ -214,7 +215,7 @@ Unsurprinsingly again, the longest river in France also has a high number of tow
 
 **How to locate**: The Loire flows into the [Bay of Biscay](https://en.wikipedia.org/wiki/Bay_of_Biscay); its estuary is located [just south of Saint-Nazaire](https://www.google.com/maps/@47.2653434,-2.246528,11.03z) (to the west of Nantes).
 
-**Communes** (70):
+**Communes** (71):
 <details>
 <summary>Click me</summary>
 
@@ -250,6 +251,7 @@ Unsurprinsingly again, the longest river in France also has a high number of tow
   * Chalonnes-sur-Loire
   * Champtocé-sur-Loire
   * Ingrandes-le-Fresne-sur-Loire
+  * Les Garennes sur Loire
   * Mauges-sur-Loire
   * Rochefort-sur-Loire
   * Saint-Georges-sur-Loire
@@ -1127,7 +1129,45 @@ The Aisne is a tributary of the Oise, which it even beats in length. It flows cl
 
 ----------
 
-### <span id="spot-20">20. Ouche</span>
+### <span id="spot-20">20. Risle</span>
+
+The Risle is another river in Picardy and shares its estuary with the Seine.
+
+**Native names**: _la Risle_ (French)
+
+**Info**: [Wikipedia](https://en.wikipedia.org/wiki/Risle)
+
+**Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1204782)
+
+![Risle](./img/courses/risle.png)
+
+**How to locate**: If you can find the estuary of the Seine (as a reminder: right south of Le Havre, west of Rouen), you can find the Risle which is dwarfed by the Seine at [Berville-sur-Mer](https://www.google.com/maps/@49.4417422,0.365008,13.86z).
+
+**Communes** (12):
+<details>
+<summary>Click me</summary>
+
+- Eure
+  * Condé-sur-Risle
+  * Corneville-sur-Risle
+  * La Ferrière-sur-Risle
+  * Freneuse-sur-Risle
+  * Glos-sur-Risle
+  * Grosley-sur-Risle
+  * Manneville-sur-Risle
+  * Montfort-sur-Risle
+  * Nassandres sur Risle ⁽¹⁾
+  * Saint-Philbert-sur-Risle
+- Orne
+  * Saint-Hilaire-sur-Risle
+  * Saint-Sulpice-sur-Risle
+
+⁽¹⁾ Not in the training map (Nassandres before 2017)
+</details>
+
+----------
+
+### <span id="spot-21">21. Ouche</span>
 
 Now obscure rivers start to make their appearance. The Ouche is a tributary of the Saône and has a suprising amount of towns named after it despite being shorter than 100 km.
 
@@ -1161,7 +1201,7 @@ Now obscure rivers start to make their appearance. The Ouche is a tributary of t
 
 ----------
 
-### <span id="spot-21">21. Somme</span>
+### <span id="spot-22">22. Somme</span>
 
 The Somme is a river in Picardy, one of many to flow into the English Channel. Unfortunately, it is also the name of small tributary of the Loire after which a single town was named.
 
@@ -1199,7 +1239,44 @@ Tributary of the Loire (1):
 
 ----------
 
-### <span id="spot-22">22. Essonne</span>
+### <span id="spot-23">23. Loir</span>
+
+The Loir is a tributary of the Sarthe, itself a tributary of the Loire. It bears repeating: despite being pronounced the same, the Loir is not the Loire.
+
+**Native names**: _le Loir_ (French)
+
+**Info**: [Wikipedia](https://en.wikipedia.org/wiki/Loir)
+
+**Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1082558)
+
+![Loir](./img/courses/loir.png)
+
+**How to locate**: The Loir flows into the Sarthe [between Briollay and Écouflant](https://www.google.com/maps/@47.5485015,-0.5234623,14.24z), just north of Angers (east of Nantes)
+
+**Communes** (11):
+<details>
+<summary>Click me</summary>
+
+- Sarthe
+  * Bazouges Cré sur Loir
+  * La Bruère-sur-Loir
+  * La Chartre-sur-le-Loir
+  * Mareil-sur-Loir
+  * Montval-sur-Loir
+  * Nogent-sur-Loir
+- Loir-et-Cher
+  * Montoire-sur-le-Loir
+  * Villiers-sur-Loir
+- Maine-et-Loire
+  * Montreuil-sur-Loir
+  * Seiches-sur-le-Loir
+- Eure-et-Loire
+  * Saint-Maur-sur-le-Loir
+</details>
+
+----------
+
+### <span id="spot-24">24. Essonne</span>
 
 The Essonne is a relatively short tributary of the Seine that flows just south of Paris.
 
@@ -1235,7 +1312,7 @@ The Essonne is a relatively short tributary of the Seine that flows just south o
 
 ----------
 
-### <span id="spot-23">23. Saulx</span>
+### <span id="spot-25">25. Saulx</span>
 
 The Saulx is a tributary of the Marne. Be careful: it is also part of the name of [several unrelated towns](https://en.wikipedia.org/wiki/Saulx).
 
@@ -1271,7 +1348,7 @@ The Saulx is a tributary of the Marne. Be careful: it is also part of the name o
 
 ----------
 
-### <span id="spot-24">24. Orge</span>
+### <span id="spot-26">26. Orge</span>
 
 The Orge is both the name of a short tributary of the Seine, and annoyingly, the name of a small stream that flows into the Saulx after which is single town is named. Good news though: this is the last entry with two rivers on the list.
 
@@ -1309,42 +1386,41 @@ Tributary of the Saulx (1):
 
 ----------
 
-### <span id="spot-25">25. Risle</span>
+### <span id="spot-27">27. Seulles</span>
 
-The Risle is another river in Picardy and shares its estuary with the Seine.
+The Seulles is a modest costal river in Normandy. Despite its short length, there is a reasonable number of towns in Calvados named after it.
 
-**Native names**: _la Risle_ (French)
+**Native names**: _la Seulles_ (French)
 
-**Info**: [Wikipedia](https://en.wikipedia.org/wiki/Risle)
+**Info**: [Wikipedia](https://en.wikipedia.org/wiki/Seulles)
 
-**Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1204782)
+**Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1259838)
 
-![Risle](./img/courses/risle.png)
+![Seulles](./img/courses/seulles.png)
 
-**How to locate**: If you can find the estuary of the Seine (as a reminder: right south of Le Havre, west of Rouen), you can find the Risle which is dwarfed by the Seine at [Berville-sur-Mer](https://www.google.com/maps/@49.4417422,0.365008,13.86z).
+**How to locate**: The Seulles flows into the English Channel at [Courseulles-sur-Mer](https://www.google.com/maps/@49.3355913,-0.4604424,15.94z), north of Caen.
 
 **Communes** (11):
 <details>
 <summary>Click me</summary>
 
-- Eure
-  * Condé-sur-Risle
-  * Corneville-sur-Risle
-  * La Ferrière-sur-Risle
-  * Freneuse-sur-Risle
-  * Glos-sur-Risle
-  * Grosley-sur-Risle
-  * Manneville-sur-Risle
-  * Montfort-sur-Risle
-  * Saint-Philbert-sur-Risle
-- Orne
-  * Saint-Hilaire-sur-Risle
-  * Saint-Sulpice-sur-Risle
+- Calvados
+  * Amayé-sur-Seulles
+  * Colombiers-sur-Seulles
+  * Condé-sur-Seulles
+  * Creully sur Seulles
+  * Esquay-sur-Seulles
+  * Juvigny-sur-Seulles
+  * Ponts sur Seulles
+  * Saint-Louet-sur-Seulles
+  * Saint-Vaast-sur-Seulles
+  * Tilly-sur-Seulles
+  * Vaux-sur-Seulles
 </details>
 
 ----------
 
-### <span id="spot-26">26. Tille</span>
+### <span id="spot-28">28. Tille</span>
 
 The Tille is a relatively short tributary of the Saône. Conveniently, it is entirely contained within the Côte-d'Or department.
 
@@ -1377,43 +1453,7 @@ The Tille is a relatively short tributary of the Saône. Conveniently, it is ent
 
 ----------
 
-### <span id="spot-27">27. Loir</span>
-
-The Loir is a tributary of the Sarthe, itself a tributary of the Loire. It bears repeating: despite being pronounced the same, the Loir is not the Loire.
-
-**Native names**: _le Loir_ (French)
-
-**Info**: [Wikipedia](https://en.wikipedia.org/wiki/Loir)
-
-**Course**: [OpenStreetMap](https://www.openstreetmap.org/relation/1082558)
-
-![Loir](./img/courses/loir.png)
-
-**How to locate**: The Loir flows into the Sarthe [between Briollay and Écouflant](https://www.google.com/maps/@47.5485015,-0.5234623,14.24z), just north of Angers (east of Nantes)
-
-**Communes** (10):
-<details>
-<summary>Click me</summary>
-
-- Sarthe
-  * La Bruère-sur-Loir
-  * La Chartre-sur-le-Loir
-  * Mareil-sur-Loir
-  * Montval-sur-Loir
-  * Nogent-sur-Loir
-- Loir-et-Cher
-  * Montoire-sur-le-Loir
-  * Villiers-sur-Loir
-- Maine-et-Loire
-  * Montreuil-sur-Loir
-  * Seiches-sur-le-Loir
-- Eure-et-Loire
-  * Saint-Maur-sur-le-Loir
-</details>
-
-----------
-
-### <span id="spot-28">28. Indre</span>
+### <span id="spot-29">29. Indre</span>
 
 The Indre is the final river to reach the threshold. It is a relatively long tributary of the Loire.
 
@@ -1448,6 +1488,6 @@ The Indre is the final river to reach the threshold. It is a relatively long tri
 
 ## Conclusion
 
-As of January 2025, there were 34804 communes in metropolitan France, 1896 of which followed the `<place>-sur-<river>` pattern, and 601 of which made the above list. In other words, learning the location of the aforementioned rivers will assist you in regionguessing panoramas that include a commune name 1.73% of the time. While it sounds disappointingly low, the odds of seeing such place names are compounded in moving games, which is where learning these rivers will come in handy most of the time.
+As of January 2025, there were 34804 communes in metropolitan France, 1896 of which followed the `<place>-sur-<river>` pattern, and 615 of which made the above list. In other words, learning the location of the aforementioned rivers will assist you in regionguessing panoramas that include a commune name 1.77% of the time. While it sounds disappointingly low, the odds of seeing such place names are compounded in moving games, which is where learning these rivers will come in handy most of the time.
 
 If you made it to the end, congratulations and thank you for taking the time to read it all! If this document can help even just of few people improve at France, I would consider my duty done.

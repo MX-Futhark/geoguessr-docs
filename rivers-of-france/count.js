@@ -4,12 +4,12 @@ communes["Rhône + Métropole de Lyon"] = communes["Rhône"].concat(communes["M�
 Object.keys(communes).map((department) => {
     const localCommunes = communes[department];
     const sum = localCommunes.reduce(
-        (acc, commune) => acc + Number(/-sur-(?!Mer)/.test(commune)),
+        (acc, commune) => acc + Number(/-sur-(?!Mer)/.test(commune.replace(/ /g, '-'))),
         0
     );
     return { department, sum };
 }).sort(
-    (a, b) => Math.sign(a.sum - b.sum)
+    (a, b) => Math.sign(b.sum - a.sum)
 ).forEach(({ department, sum }) => {
     console.log(`${department}: ${sum}`);
 });

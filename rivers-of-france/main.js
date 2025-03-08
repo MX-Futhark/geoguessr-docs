@@ -11,7 +11,9 @@ const flattened = Object.keys(communes)
     .flat();
 const riverToCommunes = new Map();
 for (const entry of flattened) {
-    const river = entry.commune.match(/-sur-(le-|la-|l')?(.+)$/)?.[2];
+    const river = entry.commune
+        .replace(/ /g, '-')
+        .match(/-sur-(le-|la-|l')?(.+)$/)?.[2];
     // /!\ Rarely, some such suffixes are not rivers
     // (e.g. Villers-sur-Port, which would be better named Villers-lès-Port
     // as it is close to Port-sur-Saône) but aside from "Mer",
