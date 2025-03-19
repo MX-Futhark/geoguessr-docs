@@ -1490,4 +1490,4 @@ The Indre is the final river to reach the threshold. It is a relatively long tri
 
 As of January 2025, there were 34804 communes in metropolitan France, 1896 of which followed the `<place>-sur-<river>` pattern, and 615 of which made the above list. In other words, learning the location of the aforementioned rivers will assist you in regionguessing panoramas that include a commune name 1.77% of the time. While it sounds disappointingly low, the odds of seeing such place names are compounded in moving games, which is where learning these rivers will come in handy most of the time.
 
-If you made it to the end, congratulations and thank you for taking the time to read it all! If this document can help even just of few people improve at France, I would consider my duty done.
+If you made it to the end, congratulations and thank you for taking the time to read it all! If this document can help even just of few people improve at France, I would consider my duty done. If you found it useful, please consider reading my other document "[Most Useful Natural Regions of France](../natural-regions-of-france/README.md)".
