@@ -1366,7 +1366,7 @@ The Orge is both the name of a short tributary of the Seine, and annoyingly, the
 <details>
 <summary>Click me</summary>
 
-Tributary of the Seine (10)
+Tributary of the Seine (10):
 - Essonne
   * Brétigny-sur-Orge
   * Épinay-sur-Orge
