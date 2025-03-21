@@ -8,7 +8,7 @@ This document contains maps highlighting toponymical patterns in French commune 
 
 ### -bourg
 
-**Regexp**: `(?%3C!^|-)bourg($|-)`
+**Regexp**: `(?<!^|-)bourg($|-)`
 
 ![-bourg](./img/bourg.png)
 
