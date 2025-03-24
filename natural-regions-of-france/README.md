@@ -36,7 +36,7 @@ By far, `-en-<place>` is the pattern in which natural regions come up the most. 
 | Bois<br>Bosc | Woods | Joué‑du‑Bois<br>La Neuville‑du‑Bosc | |
 | Champ (pl: champs) | Field | Saint‑Pierre‑du‑Champ | |
 | Pré (pl: prés) | Meadow | Vic‑des‑Prés | |
-| Landes | Moorland or heathland | Rion‑des‑Landes | ⚠ There is a department called [Landes](https://en.wikipedia.org/wiki/Landes_(department)) but only one `-des-Landes` town is located there. |
+| Landes | Moorland or heathland | Rion‑des‑Landes | ⚠ There is a department called [Landes](https://en.wikipedia.org/wiki/Landes_(department)) but only one `-des-Landes` commune is located there. |
 | Vignes | Vineyard | Saint‑Jean‑des‑Vignes | |
 | Désert | Desert | La Bazouge‑du‑Désert | The word used to have the more general sense of "infertile land". |
 | Montagne | Mountain | Courcelles‑en‑Montagne | |
@@ -1750,7 +1750,7 @@ Béarn is a former province of France, whose name is still familiar to French pe
 
 ### <span id="spot-45">45. Razès</span>
 
-Razés is a historical county of southern France and the last entry on the list. All `-du-Razès` communes are located in western Aude, usually to the southwest of [Carcassonne](https://www.google.com/maps/place/11000+Carcassonne) between [Mirepoix](https://www.google.com/maps/place/09500+Mirepoix) and [Limoux](https://www.google.com/maps/place/11300+Limoux/).
+Razès is a historical county of southern France and the last entry on the list. All `-du-Razès` communes are located in western Aude, usually to the southwest of [Carcassonne](https://www.google.com/maps/place/11000+Carcassonne) between [Mirepoix](https://www.google.com/maps/place/09500+Mirepoix) and [Limoux](https://www.google.com/maps/place/11300+Limoux/).
 
 **Info**: [Wikipedia](https://en.wikipedia.org/wiki/Raz%C3%A8s)
 
