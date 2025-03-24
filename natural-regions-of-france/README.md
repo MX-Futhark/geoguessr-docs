@@ -1291,7 +1291,7 @@ Historical dependency of Bar-sur-Aube (1):
 
 ### <span id="spot-30">30. Cambrésis</span>
 
-As mentioned in the introduction, Cambrésis shares its etymology with the city of [Cambrai](https://www.google.com/maps/place/Cambrai). All `-en-Cambrésis` communes in this former county of the Holy Roman Empire are located in a small area around the city.
+Cambrésis shares its etymology with the city of [Cambrai](https://www.google.com/maps/place/Cambrai). All `-en-Cambrésis` communes in this former county of the Holy Roman Empire are located in a small area around the city.
 
 **Info**: [Wikipedia](https://en.wikipedia.org/wiki/Cambr%C3%A9sis)
 
