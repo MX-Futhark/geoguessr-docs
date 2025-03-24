@@ -22,43 +22,43 @@ This document contains maps highlighting toponymical patterns in French commune 
 
 **Regexp**: `ville($|-)`
 
-![-ville](./img/ville.png);
+![-ville](./img/ville.png)
 
 ### -viller
 
 **Regexp**: `viller($|-)`
 
-![-viller](./img/viller.png);
+![-viller](./img/viller.png)
 
 ### -villers
 
-**Regexp**: `villers($|-)
+**Regexp**: `villers($|-)`
 
-![-villers](./img/villers.png);
+![-villers](./img/villers.png)
 
 ### -willer
 `
 **Regexp**: `willer($|-)`
 
-![-willer](./img/willer.png);
+![-willer](./img/willer.png)
 
 ### -villiers
 
-**Regexp**: `villiers($|-)
+**Regexp**: `villiers($|-)`
 
-![-villiers](./img/villiers.png);
+![-villiers](./img/villiers.png)
 
 ### -villars
 `
 **Regexp**: `villars($|-)`
 
-![-villars](./img/villars.png);
+![-villars](./img/villars.png)
 
 ### La Neuville-
 
 **Regexp**: `^la neuville`
 
-![La Neuville-](./img/la_neuville.png);
+![La Neuville-](./img/la_neuville.png)
 
 ### -heim
 
@@ -86,7 +86,7 @@ This document contains maps highlighting toponymical patterns in French commune 
 
 ![-sur-Mer](./img/sur_mer.png)
 
-### -sur- something else
+### -sur- (excluding -sur-Mer)
 
 **Regexp**: `-sur-(?!mer$)`
 
@@ -127,6 +127,12 @@ This document contains maps highlighting toponymical patterns in French commune 
 **Regexp**: `-le-roi$`
 
 ![-le-Roi](./img/le_roi.png)
+
+### Le Plessis-
+
+**Regexp**: `^le plessis(-|$)`
+
+![Le Plessis-](./img/le_plessis.png)
 
 ### mesnil
 
@@ -274,6 +280,12 @@ Includes many natural regions which are better learned separately.
 
 ![-ach](./img/ach.png)
 
+### -en (excluding -en- and Saint-Julien, Saint-Ouen, etc.)
+
+**Regexp**: `^(?!saint-).*(?<!-)en($|-)`
+
+![-en](./img/en.png)
+
 ### -ech, -eich
 
 **Regexp**: `ei?ch($|-)`
@@ -376,11 +388,11 @@ Includes many natural regions which are better learned separately.
 
 ![-euil](./img/euil.png)
 
-## ols, ouls
+## -ols, -ouls
 
 **Regexp**: `ou?ls($|-)`
 
-![ols, ouls](./img/ols.png)
+![-ols, -ouls](./img/ols.png)
 
 ### -ol
 
