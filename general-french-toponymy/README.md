@@ -400,6 +400,12 @@ Includes many natural regions which are better learned separately.
 
 ![-ol](./img/ol.png)
 
+### -rgues
+
+**Regexp**: `rgues($|-)`
+
+![-rgues](./img/rgues.png)
+
 ## General misc
 
 ### La -ère
