@@ -122,6 +122,12 @@ This document contains maps highlighting toponymical patterns in French commune 
 
 ![-lez-](./img/lez.png)
 
+### -le-Bas
+
+**Regexp**: `-le-bas$`
+
+![-le-Bas](./img/le_bas.png)
+
 ### -le-Roi
 
 **Regexp**: `-le-roi$`
@@ -204,9 +210,9 @@ Esp. plou-
 
 ![-ac](./img/ac.png)
 
-### -as (excluding Saint-Thomas, Saint-Nicolas, -Bas and -Pas)
+### -as (excluding Saint-Thomas, Saint-Nicolas, -Bas)
 
-**Regexp**: `(?<!(saint-(thom|nicol)|(^|-)bas|(^|-)pas))as($|-)`
+**Regexp**: `(?<!(saint-(thom|nicol)|-le-b))as($|-)`
 
 ![-as](./img/as.png)
 

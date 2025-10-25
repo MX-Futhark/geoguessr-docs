@@ -11,12 +11,12 @@ If the commune density is high:
 - Increase selection by one, copy/paste to a new screen-mode, black-background layer
 - Fill with #ffff00 and undo selection
 - Apply gaussian blur with a radius of 12.5px
-- Change luminosity/contrast with parameters L50/C100
+- Change brightness/contrast with parameters B50/C100
 - Set layer opacity to 35%
 
 
 If the commune density is low (or if there is a low-density area worth highlighting despite a higher density area elsewhere):
-- Same steps as above with parameters L75/C100
+- Same steps as above with parameters B75/C100
 
 If the commune density is too sparse for the above to yield a proper highlight:
 - Over a new transparent layer, increase selection by 10
