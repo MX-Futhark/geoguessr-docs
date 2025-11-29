@@ -2,7 +2,7 @@
 
 🚧 In a permanent state of being unfinished 🚧
 
-This document contains maps highlighting toponymical patterns in French commune names. Many of those patterns are already well known. The maps are based on https://ssz.fr/places/ whose database is out of base, and areas are highlighted on a largely subjective basis. Patterns are provided largely unsorted, and without any sort of etymological explanation. Most of them are also missing obvious exceptions. Make of that what you will.
+This document contains maps highlighting toponymical patterns in French commune names. Many of those patterns are already well known. The maps are based on https://ssz.fr/places/ whose database is out of date, and areas are highlighted on a largely subjective basis. Patterns are provided largely unsorted, and without any sort of etymological explanation. Most of them are also missing obvious exceptions. Make of that what you will.
 
 ## Variations of "bourg" / "ville"
 
