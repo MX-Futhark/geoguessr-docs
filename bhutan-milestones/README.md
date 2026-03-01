@@ -64,7 +64,8 @@ Note that identical road numbers with different formatting or writing systems ar
 * [NH-2](#nh2)
 * [གཞུང་ལམ-༢ ↵ NH-2](#nh2)
 * [NH-3](#nh4_latin)
-* [NH-4](#nh4_latin)
+* [NH 4](#nh4_latin_no_hyphen)
+* [NH-4](#nh4_latin_hyphen)
 * [གཞུང་ལམ-༤ ↵ NH-4](#nh4_biscriptal)
 * [PNH](#pnh_latin)
 * [གཞུང་ལམ ↵ PNH](#pnh_biscriptal)
@@ -283,7 +284,7 @@ The Tsirang - Dagana road is another district road without a number. Milestones 
 
 #### <span id="district_road_latin">DISTRICT ROAD</span>
 
-"DISTRICT ROAD" is latin script can be found in the last ¾<sup>ths</sup> of the Tsirang - Dagana road.
+"DISTRICT ROAD" in latin script can be found in the last ¾<sup>ths</sup> of the Tsirang - Dagana road.
 
 ![DISTRICT ROAD milestone example](./img/milestones/district_road_latin.jpg)
 
@@ -345,19 +346,29 @@ The Gelephu - Tsirang is consistently numbered as "[གཞུང་ལམ-༥](#
 
 The Gelephu - Trongsa road is weird in that it only has one name, but is is not written everywhere, and the distribution of the two possible road number formats makes little sense. In addition, dirty milestones and poor visibility in the southern part of the road make it difficult to read the road number in the first place.
 
-#### <span id="nh4_latin">NH-4</span>
+#### <span id="nh4_latin_hyphen">NH-4</span>
 
-"NH-4" in Latin script only is mostly found in two places:
+"NH-4" in Latin script with a hyphen only is mostly found in two places:
 * Some distance south of Trongsa
 * Around Zhemgang
 
 ⚠ There is [a lone milestone south of Dandung that appears to read NH-3](https://maps.app.goo.gl/fvehNSd2pGCoWths8) instead of NH-4.
 
-![NH-4 milestone example](./img/milestones/nh4_latin.jpg)
+![NH-4 milestone example](./img/milestones/nh4_latin_hyphen.jpg)
 
-![NH-4 bird’s-eye view distribution](./img/distribution/nh4_latin.png)
+![NH-4 bird’s-eye view distribution](./img/distribution/nh4_latin_hyphen.png)
 
-![NH-4 close-up distribution](./img/closeup/nh4_latin.png)
+![NH-4 close-up distribution](./img/closeup/nh4_latin_hyphen.png)
+
+#### <span id="nh4_latin_no_hyphen">NH 4</span>
+
+"NH 4" in Latin script without a hyphen can be found just north of Zhemgang.
+
+![NH 4 milestone example](./img/milestones/nh4_latin_no_hyphen.jpg)
+
+![NH 4 bird’s-eye view distribution](./img/distribution/nh4_latin_no_hyphen.png)
+
+![NH 4 close-up distribution](./img/closeup/nh4_latin_no_hyphen.png)
 
 #### <span id="nh4_biscriptal">གཞུང་ལམ-༤ ↵ NH-4</span>
 
