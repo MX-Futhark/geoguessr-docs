@@ -292,6 +292,8 @@ Includes many natural regions which are better learned separately.
 
 ### -en (excluding -en- and Saint-Julien, Saint-Ouen, etc.)
 
+N.B. Includes -ghen, -hoffen, -hausen, etc.
+
 **Regexp**: `^(?!saint-).*(?<!-)en($|-)`
 
 ![-en](./img/en.png)
@@ -415,6 +417,48 @@ Includes many natural regions which are better learned separately.
 **Regexp**: `rgues($|-)`
 
 ![-rgues](./img/rgues.png)
+
+### -ecques
+
+**Regexp**: `ecques($|-)`
+
+![-ecques](./img/ecques.png)
+
+### -gnies
+
+**Regexp**: `gnies($|-)`
+
+![-gnies](./img/gnies.png)
+
+### -thal
+
+**Regexp**: `thal($|-)`
+
+![-thal](./img/thal.png)
+
+### -dorf
+
+**Regexp**: `dorf($|-)`
+
+![-dorf](./img/dorf.png)
+
+### -stroff
+
+**Regexp**: `stroff($|-)`
+
+![-stroff](./img/stroff.png)
+
+### -hoffen
+
+**Regexp**: `hoffen($|-)`
+
+![-hoffen](./img/hoffen.png)
+
+### -hausen
+
+**Regexp**: `hausen($|-)`
+
+![-hausen](./img/hausen.png)
 
 ## General misc
 
