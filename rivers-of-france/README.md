@@ -6,6 +6,8 @@
 
 _If you find a mistake in this document (typo, broken link, anything) or the map (broken location, unofficial coverage…), feel free to file an issue. Contributions will be mentioned above._
 
+N.B. A similar list with looser naming constraints and a lower municipality count threshold can be found on super-duper: [#1](https://super-duper.fr/quiz2024/suffix.php?iso2=FRAR1&language=en&tiles=gmaps&timer=false&gmaplng=en), [#2](https://super-duper.fr/quiz2024/suffix.php?iso2=FRAR2&language=en&tiles=gmaps&timer=false&gmaplng=en), [#3](https://super-duper.fr/quiz2024/suffix.php?iso2=FRAR3&language=en&tiles=gmaps&timer=false&gmaplng=en).
+
 ## Introduction
 
 It is common knowledge among GeoGuessr players that town names in France are commonly named after rivers. In fact, over one in twenty town name in France ends with `-sur-<river>` (meaning `on <river>`). The general consensus is to at least learn the course of the [Seine](https://en.wikipedia.org/wiki/Seine), [Loire](https://en.wikipedia.org/wiki/Loire), [Rhône](https://en.wikipedia.org/wiki/Rh%C3%B4ne), [Garonne](https://en.wikipedia.org/wiki/Garonne), and sometimes the [Marne](https://en.wikipedia.org/wiki/Marne_(river)) to cover one's bases. However, while those are undoubtably some of the most famous rivers in France, it doesn't mean that they are the ones that show up the most in place names.

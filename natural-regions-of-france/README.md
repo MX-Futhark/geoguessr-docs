@@ -6,6 +6,8 @@
 
 _If you find a mistake in this document (typo, broken link, anything) or the map (broken location, unofficial coverage…), feel free to file an issue. Contributions will be mentioned above._
 
+N.B. A similar list with looser naming constraints and a lower municipality count threshold can be found on super-duper: [#1](https://super-duper.fr/quiz2024/suffix.php?iso2=FRAS1&language=en&tiles=gmaps&timer=false&gmaplng=en), [#2](https://super-duper.fr/quiz2024/suffix.php?iso2=FRAS2&language=en&tiles=gmaps&timer=false&gmaplng=en), [#3](https://super-duper.fr/quiz2024/suffix.php?iso2=FRAS3&language=en&tiles=gmaps&timer=false&gmaplng=en).
+
 ## Introduction
 
 French toponyms are notorious among GeoGuessr players for being one of the most useful hints for regionguessing France: -court means northeast, -heim means Alsace. The river next to which the town is located is occasionally indicated in its name. But a perhaps lesser-known fact about French toponymy is that many towns will let you know more or less where they are in other ways, if you can exploit the information they give you. In some cases, it's not particularly useful: "[Chapelle-des-Bois](https://www.google.com/maps/place/25240+Chapelle-des-Bois)" means "Chapel in the woods". In other cases however, the end of the town name can contain the name of the region it is located in: "[Bourg-en-Bresse](https://www.google.com/maps/place/01000+Bourg-en-Bresse)" means "Town in [Bresse](https://en.wikipedia.org/wiki/Bresse)". It is then evident that knowing where Bresse is is a prerequisite to performing an informed guess.
