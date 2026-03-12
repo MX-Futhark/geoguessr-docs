@@ -412,6 +412,10 @@ N.B. Includes -ghen, -hoffen, -hausen, etc.
 
 ![-ol](./img/ol.png)
 
+**Regexp**: `nx($|-)`
+
+![-nx](./img/nx.png)
+
 ### -rgues
 
 **Regexp**: `rgues($|-)`

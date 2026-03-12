@@ -14,7 +14,6 @@ If the commune density is high:
 - Change brightness/contrast with parameters B50/C100
 - Set layer opacity to 35%
 
-
 If the commune density is low (or if there is a low-density area worth highlighting despite a higher density area elsewhere):
 - Same steps as above with parameters B75/C100
 
