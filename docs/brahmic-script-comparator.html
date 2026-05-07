@@ -1,0 +1,2758 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Brahmic script comparator</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            .hidden {
+                display: none !important;
+            }
+
+            button.active {
+                border: 2px solid black;
+                border-radius: 4px;
+            }
+
+            main > div {
+                margin-top: 20px;
+            }
+
+            fieldset > div {
+                display: inline-block;
+            }
+
+            #tree-view {
+                display: flex;
+                flex-direction: row;
+            }
+
+            #tree-wrapper {
+                flex-basis: 30%;
+            }
+
+            #tree-controls {
+                flex-basis: 70%;
+            }
+
+            #table-view {
+                margin: 20px;
+            }
+
+            .table-label {
+                display: inline-block;
+                margin-top: 20px;
+            }
+
+            .tree {
+                --spacing: 1rem;
+                margin: 0;
+                padding-left: 0;
+            }
+
+            .tree li {
+                display: block;
+                position: relative;
+                padding-left: calc(var(--spacing) - 1px);
+            }
+
+            .tree ul {
+                margin-left: calc(- var(--spacing));
+                padding-left: 0;
+            }
+
+            .tree ul li {
+                border-left: 1px solid black;
+                margin-left: 4px;
+            }
+
+            .tree ul li:last-child {
+                border-color: transparent;
+            }
+
+            .tree ul li::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: calc(- var(--spacing));
+                left: -1px;
+                width: calc(var(--spacing) - 6px);
+                height: calc(var(--spacing) - 6px);
+                border: solid black;
+                border-width: 0 0 1px 1px;
+            }
+
+            .tree .container {
+                position: relative;
+            }
+
+            .tree .node-label {
+                background-color: white;
+            }
+
+            .tree .node-label::after {
+                content: '\00a0';
+            }
+
+            .tree .node-value {
+                position: absolute;
+                width: 100%;
+                right: 40px;
+                text-align: right;
+            }
+
+            .tree .node-value::before {
+                content: '\00a0';
+                position: absolute;
+                top: calc(var(--spacing) / -2);
+                width: calc(100% - 40px);
+                right: 0;
+                border-bottom: 1px dotted black;
+                z-index: -1;
+            }
+
+            .tree .node-value::after {
+                content: '\00a0' attr(data-value);
+                color: transparent;
+                display: inline-block; /* avoids display issues for dependent vowels on Chromium */
+                background-color: white;
+                position: absolute;
+                right: 0;
+                text-align: right;
+                z-index: -1;
+            }
+
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                padding: 2px;
+            }
+
+            table ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            table li {
+                display: inline-block;
+            }
+
+            th {
+                background-color: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <template id="tables">
+            <span class="table-label">Consonants</span>
+            <table data-content="consonants">
+                <tbody>
+                    <tr>
+                        <th rowspan="3"></th>
+                        <th colspan="4">Occlusive</th>
+                        <th>Nasal</th>
+                        <th>Approximant</th>
+                        <th colspan="2">Fricative</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Voiceless</th>
+                        <th colspan="4">Voiced</th>
+                        <th>Voiceless</th>
+                        <th>Voiced</th>
+                    </tr>
+                    <tr>
+                        <th>Unaspirated</th>
+                        <th>Aspirated</th>
+                        <th>Unaspirated</th>
+                        <th>Aspirated</th>
+                        <th colspan="2">Unaspirated</th>
+                        <th colspan="2">Aspirated</th>
+                    </tr>
+                    <tr>
+                        <th>Velar</th>
+                        <td>
+                            <ul>
+                                <li data-value="ka"></li>
+                                <li data-value="kṣa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="kha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ga"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="gha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ṅa"></li>
+                            </ul>
+                        </td>
+                        <td><ul></ul></td>
+                        <td><ul></ul></td>
+                        <td>
+                            <ul>
+                                <li data-value="ha"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Palatal</th>
+                        <td>
+                            <ul>
+                                <li data-value="ca"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="cha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ja"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="jha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ña"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ya"></li>
+                                <li data-value="ẏa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="śa"></li>
+                            </ul>
+                        </td>
+                        <td><ul></ul></td>
+                    </tr>
+                    <tr>
+                        <th>Retroflex</th>
+                        <td>
+                            <ul>
+                                <li data-value="ṭa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ṭha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ḍa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ḍha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ṇa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ra"></li>
+                                <li data-value="ṟa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ṣa"></li>
+                            </ul>
+                        </td>
+                        <td><ul></ul></td>
+                    </tr>
+                    <tr>
+                        <th>Dental</th>
+                        <td>
+                            <ul>
+                                <li data-value="ta"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="tha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="da"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="dha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="na"></li>
+                                <li data-value="ṉa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="la"></li>
+                                <li data-value="ḷa"></li>
+                                <li data-value="ḻa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="sa"></li>
+                            </ul>
+                        </td>
+                        <td><ul></ul></td>
+                    </tr>
+                    <tr>
+                        <th>Labial</th>
+                        <td>
+                            <ul>
+                                <li data-value="pa"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="pha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ba"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="bha"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ma"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="va"></li>
+                            </ul>
+                        </td>
+                        <td><ul></ul></td>
+                        <td><ul></ul></td>
+                    </tr>
+                </tbody>
+            </table>
+            <span class="table-label">Vowels</span>
+            <table data-content="vowels">
+                <tbody>
+                    <tr>
+                        <th rowspan="2"></th>
+                        <th colspan="2">Short</th>
+                        <th colspan="2">Long</th>
+                    </tr>
+                    <tr>
+                        <th>Independent</th>
+                        <th>Dependent</th>
+                        <th>Independent</th>
+                        <th>Dependent</th>
+                    </tr>
+                    <tr>
+                        <th>Velar</th>
+                        <td>
+                            <ul>
+                                <li data-value="a"></li>
+                                <li data-value="ê"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-a"></li>
+                                <li data-value="-ê"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ā"></li>
+                                <li data-value="ô"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-ā"></li>
+                                <li data-value="-ô"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Palatal</th>
+                        <td>
+                            <ul>
+                                <li data-value="i"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-i"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ī"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-ī"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Labial</th>
+                        <td>
+                            <ul>
+                                <li data-value="u"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-u"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ū"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-ū"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Retroflex</th>
+                        <td>
+                            <ul>
+                                <li data-value="r̥"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-r̥"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="r̥̄"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-r̥̄"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Dental</th>
+                        <td>
+                            <ul>
+                                <li data-value="l̥"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-l̥"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="l̥"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-l̥"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Palatovelar</th>
+                        <td>
+                            <ul>
+                                <li data-value="ē"></li>
+                                <li data-value="e"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-ē"></li>
+                                <li data-value="-e"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="ai"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-ai"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Labiovelar</th>
+                        <td>
+                            <ul>
+                                <li data-value="ō"></li>
+                                <li data-value="o"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-ō"></li>
+                                <li data-value="-o"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="au"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="-au"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Other</th>
+                        <td><ul></ul></td>
+                        <td>
+                            <ul>
+                                <li data-value="-ṁ"></li>
+                                <li data-value="-ḥ"></li>
+                                <li data-value="-∅"></li>
+                            </ul>
+                        </td>
+                        <td><ul></ul></td>
+                        <td><ul></ul></td>
+                    </tr>
+                </tbody>
+            </table>
+            <span class="table-label">Numerals</span>
+            <table data-content="numerals">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                    </tr>
+                    <tr>
+                        <th>Digit</th>
+                        <td>
+                            <ul>
+                                <li data-value="0"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="1"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="2"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="3"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="4"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="5"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="6"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="7"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="8"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li data-value="9"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </template>
+        <main>
+            <fieldset>
+                <legend>View:</legend>
+                <div>
+                    <input type="radio" id="tree-view-radio" name="view-choice" value="tree" checked />
+                    <label for="tree-view-radio">Tree</label>
+                </div>
+                <div>
+                    <input type="radio" id="table-view-radio" name="view-choice" value="table" />
+                    <label for="table-view-radio">Side-by-side</label>
+                </div>
+            </fieldset>
+            <div id="tree-view" class="hidden">
+                <div id="tree-wrapper">
+                    <fieldset style="margin: 10px; margin-top: -10px; margin-right: 30px">
+                        <legend>Tree:</legend>
+                        <div>
+                            <input
+                                type="radio"
+                                id="simplified-tree-radio"
+                                name="tree-choice"
+                                value="simplified"
+                                checked
+                            />
+                            <label for="simplified-tree-radio">Simplified</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="detailed-tree-radio" name="tree-choice" value="detailed" />
+                            <label for="detailed-tree-radio">Detailed</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="tree-controls"></div>
+            </div>
+            <div id="table-view" class="hidden"></div>
+        </main>
+        <script>
+            var simplifiedTree = {
+                label: 'Brahmi',
+                children: [
+                    {
+                        label: 'Northern',
+                        children: [
+                            {
+                                label: 'Gurmukhi',
+                                value: '∅',
+                            },
+                            {
+                                label: 'Siddham',
+                                children: [
+                                    {
+                                        label: 'Nagari',
+                                        children: [
+                                            {
+                                                label: 'Devanagari',
+                                                value: '∅',
+                                            },
+                                            {
+                                                label: 'Gujarati',
+                                                value: '∅',
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: 'Gaudi',
+                                        children: [
+                                            {
+                                                label: 'Bengali-Assamese',
+                                                value: '∅',
+                                            },
+                                            {
+                                                label: 'Odia',
+                                                value: '∅',
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                label: 'Tibetan',
+                                value: '∅',
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Southern',
+                        children: [
+                            {
+                                label: 'Pallava',
+                                children: [
+                                    {
+                                        label: 'Tamil',
+                                        value: '∅',
+                                    },
+                                    {
+                                        label: 'Grantha',
+                                        children: [
+                                            {
+                                                label: 'Malayalam',
+                                                value: '∅',
+                                            },
+                                            {
+                                                label: 'Sinhala',
+                                                value: '∅',
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: 'Khmer',
+                                        value: '∅',
+                                        children: [
+                                            {
+                                                label: 'Thai',
+                                                value: '∅',
+                                            },
+                                            {
+                                                label: 'Lao',
+                                                value: '∅',
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                label: 'Telugu-Kannada',
+                                children: [
+                                    {
+                                        label: 'Kannada',
+                                        value: '∅',
+                                    },
+                                    {
+                                        label: 'Telugu',
+                                        value: '∅',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            };
+
+            var completeTree = {
+                label: 'Brahmi',
+                children: [
+                    {
+                        label: 'Northern',
+                        children: [
+                            {
+                                label: 'Gupta',
+                                children: [
+                                    {
+                                        label: 'Sharada',
+                                        children: [
+                                            {
+                                                label: 'Landa',
+                                                children: [
+                                                    {
+                                                        label: 'Gurmukhi',
+                                                        value: '∅',
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: 'Siddham',
+                                        children: [
+                                            {
+                                                label: 'Nagari',
+                                                children: [
+                                                    {
+                                                        label: 'Devanagari',
+                                                        value: '∅',
+                                                    },
+                                                    {
+                                                        label: 'Gujarati',
+                                                        value: '∅',
+                                                    },
+                                                ],
+                                            },
+                                            {
+                                                label: 'Gaudi',
+                                                children: [
+                                                    {
+                                                        label: 'Bengali-Assamese',
+                                                        value: '∅',
+                                                    },
+                                                    {
+                                                        label: 'Odia',
+                                                        value: '∅',
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: 'Tibetan',
+                                        value: '∅',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Southern',
+                        children: [
+                            {
+                                label: 'Tamil-Brahmi',
+                                children: [
+                                    {
+                                        label: 'Pallava',
+                                        children: [
+                                            {
+                                                label: 'Tamil',
+                                                value: '∅',
+                                            },
+                                            {
+                                                label: 'Grantha',
+                                                children: [
+                                                    {
+                                                        label: 'Malayalam',
+                                                        value: '∅',
+                                                    },
+                                                    {
+                                                        label: 'Sinhala',
+                                                        value: '∅',
+                                                    },
+                                                ],
+                                            },
+                                            {
+                                                label: 'Khmer',
+                                                value: '∅',
+                                                children: [
+                                                    {
+                                                        label: 'Sukhothai',
+                                                        children: [
+                                                            {
+                                                                label: 'Thai',
+                                                                value: '∅',
+                                                            },
+                                                            {
+                                                                label: 'Fakkham',
+                                                                children: [
+                                                                    {
+                                                                        label: 'Thai Noi',
+                                                                        children: [
+                                                                            {
+                                                                                label: 'Lao',
+                                                                                value: '∅',
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                label: 'Kadamba',
+                                children: [
+                                    {
+                                        label: 'Telugu-Kannada',
+                                        children: [
+                                            {
+                                                label: 'Kannada',
+                                                value: '∅',
+                                            },
+                                            {
+                                                label: 'Telugu',
+                                                value: '∅',
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            };
+
+            var data = {
+                consonants: {
+                    ka: {
+                        Gurmukhi: ['ਕ'],
+                        Devanagari: ['क'],
+                        Gujarati: ['ક'],
+                        'Bengali-Assamese': ['ক'],
+                        Odia: ['କ'],
+                        Tibetan: ['ཀ'],
+                        Tamil: ['க'],
+                        Malayalam: ['ക'],
+                        Sinhala: ['ක'],
+                        Khmer: ['ក'],
+                        Thai: ['ก'],
+                        Lao: ['ກ'],
+                        Telugu: ['క'],
+                        Kannada: ['ಕ'],
+                    },
+                    kha: {
+                        Gurmukhi: ['ਖ'],
+                        Devanagari: ['ख'],
+                        Gujarati: ['ખ'],
+                        'Bengali-Assamese': ['খ'],
+                        Odia: ['ଖ'],
+                        Tibetan: ['ཁ'],
+                        Tamil: [],
+                        Malayalam: ['ഖ'],
+                        Sinhala: ['ඛ'],
+                        Khmer: ['ខ'],
+                        Thai: ['ข', 'ฃ'],
+                        Lao: ['ຂ'],
+                        Telugu: ['ఖ'],
+                        Kannada: ['ಖ'],
+                    },
+                    ga: {
+                        Gurmukhi: ['ਗ'],
+                        Devanagari: ['ग'],
+                        Gujarati: ['ગ'],
+                        'Bengali-Assamese': ['গ'],
+                        Odia: ['ଗ'],
+                        Tibetan: ['ག'],
+                        Tamil: [],
+                        Malayalam: ['ഗ'],
+                        Sinhala: ['ග'],
+                        Khmer: ['គ'],
+                        Thai: ['ค', 'ฅ'],
+                        Lao: ['ຄ'],
+                        Telugu: ['గ'],
+                        Kannada: ['ಗ'],
+                    },
+                    gha: {
+                        Gurmukhi: ['ਘ'],
+                        Devanagari: ['घ'],
+                        Gujarati: ['ઘ'],
+                        'Bengali-Assamese': ['ঘ'],
+                        Odia: ['ଘ'],
+                        Tibetan: ['གྷ'],
+                        Tamil: [],
+                        Malayalam: ['ഘ'],
+                        Sinhala: ['ඝ'],
+                        Khmer: ['ឃ'],
+                        Thai: ['ฆ'],
+                        Lao: [],
+                        Telugu: ['ఘ'],
+                        Kannada: ['ಘ'],
+                    },
+                    ṅa: {
+                        Gurmukhi: ['ਙ'],
+                        Devanagari: ['ङ'],
+                        Gujarati: ['ઙ'],
+                        'Bengali-Assamese': ['ঙ'],
+                        Odia: ['ଙ'],
+                        Tibetan: ['ང'],
+                        Tamil: ['ங'],
+                        Malayalam: ['ങ'],
+                        Sinhala: ['ඞ'],
+                        Khmer: ['ង'],
+                        Thai: ['ง'],
+                        Lao: ['ງ'],
+                        Telugu: ['ఙ'],
+                        Kannada: ['ಙ'],
+                    },
+                    ca: {
+                        Gurmukhi: ['ਚ'],
+                        Devanagari: ['च'],
+                        Gujarati: ['ચ'],
+                        'Bengali-Assamese': ['চ'],
+                        Odia: ['ଚ'],
+                        Tibetan: ['ཅ'],
+                        Tamil: ['ச'],
+                        Malayalam: ['ച'],
+                        Sinhala: ['ච'],
+                        Khmer: ['ច'],
+                        Thai: ['จ'],
+                        Lao: ['ຈ'],
+                        Telugu: ['చ'],
+                        Kannada: ['ಚ'],
+                    },
+                    cha: {
+                        Gurmukhi: ['ਛ'],
+                        Devanagari: ['छ'],
+                        Gujarati: ['છ'],
+                        'Bengali-Assamese': ['ছ'],
+                        Odia: ['ଛ'],
+                        Tibetan: ['ཆ'],
+                        Tamil: [],
+                        Malayalam: ['ഛ'],
+                        Sinhala: ['ඡ'],
+                        Khmer: ['ឆ'],
+                        Thai: ['ฉ'],
+                        Lao: [],
+                        Telugu: ['ఛ'],
+                        Kannada: ['ಛ'],
+                    },
+                    ja: {
+                        Gurmukhi: ['ਜ'],
+                        Devanagari: ['ज'],
+                        Gujarati: ['જ'],
+                        'Bengali-Assamese': ['জ'],
+                        Odia: ['ଜ'],
+                        Tibetan: ['ཇ'],
+                        Tamil: ['ஜ'],
+                        Malayalam: ['ജ'],
+                        Sinhala: ['ජ'],
+                        Khmer: ['ជ'],
+                        Thai: ['ช', 'ซ'],
+                        Lao: ['ຊ'],
+                        Telugu: ['జ'],
+                        Kannada: ['ಜ'],
+                    },
+                    jha: {
+                        Gurmukhi: ['ਝ'],
+                        Devanagari: ['झ'],
+                        Gujarati: ['ઝ'],
+                        'Bengali-Assamese': ['ঝ'],
+                        Odia: ['ଝ'],
+                        Tibetan: ['ཛྷ'],
+                        Tamil: [],
+                        Malayalam: ['ഝ'],
+                        Sinhala: ['ඣ'],
+                        Khmer: ['ឈ'],
+                        Thai: ['ฌ'],
+                        Lao: [],
+                        Telugu: ['ఝ'],
+                        Kannada: ['ಝ'],
+                    },
+                    ña: {
+                        Gurmukhi: ['ਞ'],
+                        Devanagari: ['ञ'],
+                        Gujarati: ['ઞ'],
+                        'Bengali-Assamese': ['ঞ'],
+                        Odia: ['ଞ'],
+                        Tibetan: ['ཉ'],
+                        Tamil: ['ஞ'],
+                        Malayalam: ['ഞ'],
+                        Sinhala: ['ඤ'],
+                        Khmer: ['ញ'],
+                        Thai: ['ญ'],
+                        Lao: [],
+                        Telugu: ['ఞ'],
+                        Kannada: ['ಞ'],
+                    },
+                    ṭa: {
+                        Gurmukhi: ['ਟ'],
+                        Devanagari: ['ट'],
+                        Gujarati: ['ટ'],
+                        'Bengali-Assamese': ['ট'],
+                        Odia: ['ଟ'],
+                        Tibetan: ['ཊ'],
+                        Tamil: ['ட'],
+                        Malayalam: ['ട'],
+                        Sinhala: ['ට'],
+                        Khmer: ['ដ'],
+                        Thai: ['ฎ', 'ฏ'],
+                        Lao: [],
+                        Telugu: ['ట'],
+                        Kannada: ['ಟ'],
+                    },
+                    ṭha: {
+                        Gurmukhi: ['ਠ'],
+                        Devanagari: ['ठ'],
+                        Gujarati: ['ઠ'],
+                        'Bengali-Assamese': ['ঠ'],
+                        Odia: ['ଠ'],
+                        Tibetan: ['ཋ'],
+                        Tamil: [],
+                        Malayalam: ['ഠ'],
+                        Sinhala: ['ඨ'],
+                        Khmer: ['ឋ'],
+                        Thai: ['ฐ'],
+                        Lao: [],
+                        Telugu: ['ఠ'],
+                        Kannada: ['ಠ'],
+                    },
+                    ḍa: {
+                        Gurmukhi: ['ਡ'],
+                        Devanagari: ['ड'],
+                        Gujarati: ['ડ'],
+                        'Bengali-Assamese': ['ড'],
+                        Odia: ['ଡ'],
+                        Tibetan: ['ཌ'],
+                        Tamil: [],
+                        Malayalam: ['ഡ'],
+                        Sinhala: ['ඩ'],
+                        Khmer: ['ឌ'],
+                        Thai: ['ฑ'],
+                        Lao: [],
+                        Telugu: ['డ'],
+                        Kannada: ['ಡ'],
+                    },
+                    ḍha: {
+                        Gurmukhi: ['ਢ'],
+                        Devanagari: ['ढ'],
+                        Gujarati: ['ઢ'],
+                        'Bengali-Assamese': ['ঢ'],
+                        Odia: ['ଢ'],
+                        Tibetan: ['ཌྷ'],
+                        Tamil: [],
+                        Malayalam: ['ഢ'],
+                        Sinhala: ['ඪ'],
+                        Khmer: ['ឍ'],
+                        Thai: ['ฒ'],
+                        Lao: [],
+                        Telugu: ['ఢ'],
+                        Kannada: ['ಢ'],
+                    },
+                    ṇa: {
+                        Gurmukhi: ['ਣ'],
+                        Devanagari: ['ण'],
+                        Gujarati: ['ણ'],
+                        'Bengali-Assamese': ['ণ'],
+                        Odia: ['ଣ'],
+                        Tibetan: ['ཎ'],
+                        Tamil: ['ண'],
+                        Malayalam: ['ണ'],
+                        Sinhala: ['ණ'],
+                        Khmer: ['ណ'],
+                        Thai: ['ณ'],
+                        Lao: [],
+                        Telugu: ['ణ'],
+                        Kannada: ['ಣ'],
+                    },
+                    ta: {
+                        Gurmukhi: ['ਤ'],
+                        Devanagari: ['त'],
+                        Gujarati: ['ત'],
+                        'Bengali-Assamese': ['ত'],
+                        Odia: ['ତ'],
+                        Tibetan: ['ཏ'],
+                        Tamil: ['த'],
+                        Malayalam: ['ത'],
+                        Sinhala: ['ත'],
+                        Khmer: ['ត'],
+                        Thai: ['ด', 'ต'],
+                        Lao: ['ດ', 'ຕ'],
+                        Telugu: ['త'],
+                        Kannada: ['ತ'],
+                    },
+                    tha: {
+                        Gurmukhi: ['ਥ'],
+                        Devanagari: ['थ'],
+                        Gujarati: ['થ'],
+                        'Bengali-Assamese': ['থ'],
+                        Odia: ['ଥ'],
+                        Tibetan: ['ཐ'],
+                        Tamil: [],
+                        Malayalam: ['ഥ'],
+                        Sinhala: ['ථ'],
+                        Khmer: ['ថ'],
+                        Thai: ['ถ'],
+                        Lao: ['ຖ'],
+                        Telugu: ['థ'],
+                        Kannada: ['ಥ'],
+                    },
+                    da: {
+                        Gurmukhi: ['ਦ'],
+                        Devanagari: ['द'],
+                        Gujarati: ['દ'],
+                        'Bengali-Assamese': ['দ'],
+                        Odia: ['ଦ'],
+                        Tibetan: ['ད'],
+                        Tamil: [],
+                        Malayalam: ['ദ'],
+                        Sinhala: ['ද'],
+                        Khmer: ['ទ'],
+                        Thai: ['ท'],
+                        Lao: ['ທ'],
+                        Telugu: ['ద'],
+                        Kannada: ['ದ'],
+                    },
+                    dha: {
+                        Gurmukhi: ['ਧ'],
+                        Devanagari: ['ध'],
+                        Gujarati: ['ધ'],
+                        'Bengali-Assamese': ['ধ'],
+                        Odia: ['ଧ'],
+                        Tibetan: ['དྷ'],
+                        Tamil: [],
+                        Malayalam: ['ധ'],
+                        Sinhala: ['ධ'],
+                        Khmer: ['ធ'],
+                        Thai: ['ธ'],
+                        Lao: [],
+                        Telugu: ['ధ'],
+                        Kannada: ['ಧ'],
+                    },
+                    na: {
+                        Gurmukhi: ['ਨ'],
+                        Devanagari: ['न'],
+                        Gujarati: ['ન'],
+                        'Bengali-Assamese': ['ন'],
+                        Odia: ['ନ'],
+                        Tibetan: ['ན'],
+                        Tamil: ['ந'],
+                        Malayalam: ['ന'],
+                        Sinhala: ['න'],
+                        Khmer: ['ន'],
+                        Thai: ['น'],
+                        Lao: ['ນ'],
+                        Telugu: ['న'],
+                        Kannada: ['ನ'],
+                    },
+                    ṉa: {
+                        Gurmukhi: [],
+                        Devanagari: ['ऩ'],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: ['ன'],
+                        Malayalam: ['ഩ'],
+                        Sinhala: [],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: [],
+                        Kannada: ['ನ಼'],
+                    },
+                    pa: {
+                        Gurmukhi: ['ਪ'],
+                        Devanagari: ['प'],
+                        Gujarati: ['પ'],
+                        'Bengali-Assamese': ['প'],
+                        Odia: ['ପ'],
+                        Tibetan: ['པ'],
+                        Tamil: ['ப'],
+                        Malayalam: ['പ'],
+                        Sinhala: ['ප'],
+                        Khmer: ['ប'],
+                        Thai: ['ป', 'บ'],
+                        Lao: ['ບ', 'ປ'],
+                        Telugu: ['ప'],
+                        Kannada: ['ಪ'],
+                    },
+                    pha: {
+                        Gurmukhi: ['ਫ'],
+                        Devanagari: ['फ'],
+                        Gujarati: ['ફ'],
+                        'Bengali-Assamese': ['ফ'],
+                        Odia: ['ଫ'],
+                        Tibetan: ['ཕ'],
+                        Tamil: [],
+                        Malayalam: ['ഫ'],
+                        Sinhala: ['ඵ'],
+                        Khmer: ['ផ'],
+                        Thai: ['ผ', 'ฝ'],
+                        Lao: ['ຜ', 'ຝ'],
+                        Telugu: ['ఫ'],
+                        Kannada: ['ಫ'],
+                    },
+                    ba: {
+                        Gurmukhi: ['ਬ'],
+                        Devanagari: ['ब'],
+                        Gujarati: ['બ'],
+                        'Bengali-Assamese': ['ব'],
+                        Odia: ['ବ'],
+                        Tibetan: ['བ'],
+                        Tamil: [],
+                        Malayalam: ['ബ'],
+                        Sinhala: ['බ'],
+                        Khmer: ['ព'],
+                        Thai: ['พ', 'ฟ'],
+                        Lao: ['ພ', 'ຟ'],
+                        Telugu: ['బ'],
+                        Kannada: ['ಬ'],
+                    },
+                    bha: {
+                        Gurmukhi: ['ਭ'],
+                        Devanagari: ['भ'],
+                        Gujarati: ['ભ'],
+                        'Bengali-Assamese': ['ভ'],
+                        Odia: ['ଭ'],
+                        Tibetan: ['བྷ'],
+                        Tamil: [],
+                        Malayalam: ['ഭ'],
+                        Sinhala: ['භ'],
+                        Khmer: ['ភ'],
+                        Thai: ['ภ'],
+                        Lao: [],
+                        Telugu: ['భ'],
+                        Kannada: ['ಭ'],
+                    },
+                    ma: {
+                        Gurmukhi: ['ਮ'],
+                        Devanagari: ['म'],
+                        Gujarati: ['મ'],
+                        'Bengali-Assamese': ['ম'],
+                        Odia: ['ମ'],
+                        Tibetan: ['མ'],
+                        Tamil: ['ம'],
+                        Malayalam: ['മ'],
+                        Sinhala: ['ම'],
+                        Khmer: ['ម'],
+                        Thai: ['ม'],
+                        Lao: ['ມ'],
+                        Telugu: ['మ'],
+                        Kannada: ['ಮ'],
+                    },
+                    ya: {
+                        Gurmukhi: ['ਯ'],
+                        Devanagari: ['य'],
+                        Gujarati: ['ય'],
+                        'Bengali-Assamese': ['য'],
+                        Odia: ['ଯ'],
+                        Tibetan: ['ཡ'],
+                        Tamil: ['ய'],
+                        Malayalam: ['യ'],
+                        Sinhala: ['ය'],
+                        Khmer: ['យ'],
+                        Thai: ['ย'],
+                        Lao: ['ຍ'],
+                        Telugu: ['య'],
+                        Kannada: ['ಯ'],
+                    },
+                    ẏa: {
+                        Gurmukhi: [],
+                        Devanagari: ['य़'],
+                        Gujarati: [],
+                        'Bengali-Assamese': ['য়'],
+                        Odia: ['ୟ'],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: [],
+                        Sinhala: [],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: [],
+                        Kannada: ['ಯ಼'],
+                    },
+                    ra: {
+                        Gurmukhi: ['ਰ'],
+                        Devanagari: ['र'],
+                        Gujarati: ['ર'],
+                        'Bengali-Assamese': ['র', 'ৰ'],
+                        Odia: ['ର'],
+                        Tibetan: ['ར'],
+                        Tamil: ['ர'],
+                        Malayalam: ['ര'],
+                        Sinhala: ['ර'],
+                        Khmer: ['រ'],
+                        Thai: ['ร'],
+                        Lao: ['ຣ'],
+                        Telugu: ['ర'],
+                        Kannada: ['ರ'],
+                    },
+                    ṟa: {
+                        Gurmukhi: [],
+                        Devanagari: ['ऱ'],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: ['ཬ'],
+                        Tamil: ['ற'],
+                        Malayalam: ['റ'],
+                        Sinhala: [],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: ['ఱ'],
+                        Kannada: ['ಱ'],
+                    },
+                    la: {
+                        Gurmukhi: ['ਲ'],
+                        Devanagari: ['ल'],
+                        Gujarati: ['લ'],
+                        'Bengali-Assamese': ['ল'],
+                        Odia: ['ଲ'],
+                        Tibetan: ['ལ'],
+                        Tamil: ['ல'],
+                        Malayalam: ['ല'],
+                        Sinhala: ['ල'],
+                        Khmer: ['ល'],
+                        Thai: ['ล'],
+                        Lao: ['ລ'],
+                        Telugu: ['ల'],
+                        Kannada: ['ಲ'],
+                    },
+                    ḷa: {
+                        Gurmukhi: ['ਲ਼'],
+                        Devanagari: ['ळ'],
+                        Gujarati: ['ળ'],
+                        'Bengali-Assamese': [],
+                        Odia: ['ଳ'],
+                        Tibetan: [],
+                        Tamil: ['ள'],
+                        Malayalam: ['ള'],
+                        Sinhala: ['ළ'],
+                        Khmer: ['ឡ'],
+                        Thai: ['ฬ'],
+                        Lao: [],
+                        Telugu: ['ళ'],
+                        Kannada: ['ಳ'],
+                    },
+                    ḻa: {
+                        Gurmukhi: [],
+                        Devanagari: ['ऴ'],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: ['ழ'],
+                        Malayalam: ['ഴ'],
+                        Sinhala: [],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: ['ఴ'],
+                        Kannada: ['ೞ'],
+                    },
+                    va: {
+                        Gurmukhi: ['ਵ'],
+                        Devanagari: ['व'],
+                        Gujarati: ['વ'],
+                        'Bengali-Assamese': ['ৱ'],
+                        Odia: ['ୱ'],
+                        Tibetan: ['ཝ'],
+                        Tamil: ['வ'],
+                        Malayalam: ['വ'],
+                        Sinhala: ['ව'],
+                        Khmer: ['វ'],
+                        Thai: ['ว'],
+                        Lao: ['ວ'],
+                        Telugu: ['వ'],
+                        Kannada: ['ವ'],
+                    },
+                    śa: {
+                        Gurmukhi: ['ਸ਼'],
+                        Devanagari: ['श'],
+                        Gujarati: ['શ'],
+                        'Bengali-Assamese': ['শ'],
+                        Odia: ['ଶ'],
+                        Tibetan: ['ཤ'],
+                        Tamil: ['ஶ'],
+                        Malayalam: ['ശ'],
+                        Sinhala: ['ශ'],
+                        Khmer: ['ឝ'],
+                        Thai: ['ศ'],
+                        Lao: [],
+                        Telugu: ['శ'],
+                        Kannada: ['ಶ'],
+                    },
+                    ṣa: {
+                        Gurmukhi: [],
+                        Devanagari: ['ष'],
+                        Gujarati: ['ષ'],
+                        'Bengali-Assamese': ['ষ'],
+                        Odia: ['ଷ'],
+                        Tibetan: ['ཥ'],
+                        Tamil: ['ஷ'],
+                        Malayalam: ['ഷ'],
+                        Sinhala: ['ෂ'],
+                        Khmer: ['ឞ'],
+                        Thai: ['ษ'],
+                        Lao: [],
+                        Telugu: ['ష'],
+                        Kannada: ['ಷ'],
+                    },
+                    sa: {
+                        Gurmukhi: ['ਸ'],
+                        Devanagari: ['स'],
+                        Gujarati: ['સ'],
+                        'Bengali-Assamese': ['স'],
+                        Odia: ['ସ'],
+                        Tibetan: ['ས'],
+                        Tamil: ['ஸ'],
+                        Malayalam: ['സ'],
+                        Sinhala: ['ස'],
+                        Khmer: ['ស'],
+                        Thai: ['ส'],
+                        Lao: ['ສ'],
+                        Telugu: ['స'],
+                        Kannada: ['ಸ'],
+                    },
+                    ha: {
+                        Gurmukhi: ['ਹ'],
+                        Devanagari: ['ह'],
+                        Gujarati: ['હ'],
+                        'Bengali-Assamese': ['হ'],
+                        Odia: ['ହ'],
+                        Tibetan: ['ཧ'],
+                        Tamil: ['ஹ'],
+                        Malayalam: ['ഹ'],
+                        Sinhala: ['හ'],
+                        Khmer: ['ហ'],
+                        Thai: ['ห', 'ฮ'],
+                        Lao: ['ຫ'],
+                        Telugu: ['హ'],
+                        Kannada: ['ಹ'],
+                    },
+                    kṣa: {
+                        Gurmukhi: [],
+                        Devanagari: ['क्ष'],
+                        Gujarati: ['ક્ષ'],
+                        'Bengali-Assamese': ['ক্ষ'],
+                        Odia: ['କ୍ଷ'],
+                        Tibetan: ['ཀྵ'],
+                        Tamil: ['க்ஷ'],
+                        Malayalam: ['ക്ഷ'],
+                        Sinhala: ['ක්‍ෂ'],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: ['క్ష'],
+                        Kannada: ['ಕ್ಷ'],
+                    },
+                    ṯa: {
+                        Gurmukhi: [],
+                        Devanagari: [],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: ['ഺ'],
+                        Sinhala: [],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: [],
+                        Kannada: [],
+                    },
+                },
+                vowels: {
+                    a: {
+                        Gurmukhi: ['ਅ'],
+                        Devanagari: ['अ'],
+                        Gujarati: ['અ'],
+                        'Bengali-Assamese': ['অ'],
+                        Odia: ['ଅ'],
+                        Tibetan: ['ཨ'],
+                        Tamil: ['அ'],
+                        Malayalam: ['അ'],
+                        Sinhala: ['අ'],
+                        Khmer: ['អ'],
+                        Thai: ['อ', 'อะ'],
+                        Lao: ['ອະ'],
+                        Telugu: ['అ'],
+                        Kannada: ['ಅ'],
+                    },
+                    '-a': {
+                        Gurmukhi: ['◌'],
+                        Devanagari: ['◌'],
+                        Gujarati: ['◌'],
+                        'Bengali-Assamese': ['◌'],
+                        Odia: ['◌'],
+                        Tibetan: ['◌'],
+                        Tamil: ['◌'],
+                        Malayalam: ['◌'],
+                        Sinhala: ['◌'],
+                        Khmer: ['◌'],
+                        Thai: ['◌', '◌ะ'],
+                        Lao: ['◌ະ'],
+                        Telugu: ['◌'],
+                        Kannada: ['◌'],
+                    },
+                    ā: {
+                        Gurmukhi: ['ਆ'],
+                        Devanagari: ['आ'],
+                        Gujarati: ['આ'],
+                        'Bengali-Assamese': ['আ'],
+                        Odia: ['ଆ'],
+                        Tibetan: ['ཨཱ'],
+                        Tamil: ['ஆ'],
+                        Malayalam: ['ആ'],
+                        Sinhala: ['ආ'],
+                        Khmer: ['អា'],
+                        Thai: ['อา'],
+                        Lao: ['ອາ'],
+                        Telugu: ['ఆ'],
+                        Kannada: ['ಆ'],
+                    },
+                    '-ā': {
+                        Gurmukhi: ['◌ਾ'],
+                        Devanagari: ['◌ा'],
+                        Gujarati: ['◌ા'],
+                        'Bengali-Assamese': ['◌া'],
+                        Odia: ['◌ା'],
+                        Tibetan: ['◌ཱ'],
+                        Tamil: ['◌ா'],
+                        Malayalam: ['◌ാ'],
+                        Sinhala: ['◌ා'],
+                        Khmer: ['◌ា'],
+                        Thai: ['◌า'],
+                        Lao: ['◌າ'],
+                        Telugu: ['◌ా'],
+                        Kannada: ['◌ಾ'],
+                    },
+                    ê: {
+                        Gurmukhi: [],
+                        Devanagari: ['ॲ'],
+                        Gujarati: ['ઍ'],
+                        'Bengali-Assamese': ['অ্যা'],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: [],
+                        Sinhala: ['ඇ'],
+                        Khmer: [],
+                        Thai: ['แอ'],
+                        Lao: ['ແອ'],
+                        Telugu: [],
+                        Kannada: [],
+                    },
+                    '-ê': {
+                        Gurmukhi: [],
+                        Devanagari: ['◌ॅ'],
+                        Gujarati: ['◌ૅ'],
+                        'Bengali-Assamese': ['◌্যা'],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: [],
+                        Sinhala: ['◌ැ'],
+                        Khmer: [],
+                        Thai: ['แ◌'],
+                        Lao: ['ແ◌'],
+                        Telugu: [],
+                        Kannada: [],
+                    },
+                    ô: {
+                        Gurmukhi: [],
+                        Devanagari: ['ऑ'],
+                        Gujarati: ['ઑ'],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: [],
+                        Sinhala: ['ඈ'],
+                        Khmer: [],
+                        Thai: ['ออ'],
+                        Lao: ['ອອ'],
+                        Telugu: [],
+                        Kannada: [],
+                    },
+                    '-ô': {
+                        Gurmukhi: [],
+                        Devanagari: ['◌ॉ'],
+                        Gujarati: ['◌ૉ'],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: [],
+                        Sinhala: ['◌ෑ'],
+                        Khmer: [],
+                        Thai: ['◌อ'],
+                        Lao: ['◌ອ'],
+                        Telugu: [],
+                        Kannada: [],
+                    },
+                    i: {
+                        Gurmukhi: ['ਇ'],
+                        Devanagari: ['इ'],
+                        Gujarati: ['ઇ'],
+                        'Bengali-Assamese': ['ই'],
+                        Odia: ['ଇ'],
+                        Tibetan: ['ཨི'],
+                        Tamil: ['இ'],
+                        Malayalam: ['ഇ'],
+                        Sinhala: ['ඉ'],
+                        Khmer: ['ឥ'],
+                        Thai: ['อิ'],
+                        Lao: ['ອິ'],
+                        Telugu: ['ఇ'],
+                        Kannada: ['ಇ'],
+                    },
+                    '-i': {
+                        Gurmukhi: ['◌ਿ'],
+                        Devanagari: ['◌ि'],
+                        Gujarati: ['◌િ'],
+                        'Bengali-Assamese': ['◌ি'],
+                        Odia: ['◌ି'],
+                        Tibetan: ['◌ི'],
+                        Tamil: ['◌ி'],
+                        Malayalam: ['◌ി'],
+                        Sinhala: ['◌ි'],
+                        Khmer: ['◌ិ'],
+                        Thai: ['◌ิ'],
+                        Lao: ['◌ິ'],
+                        Telugu: ['◌ి'],
+                        Kannada: ['◌ಿ'],
+                    },
+                    ī: {
+                        Gurmukhi: ['ਈ'],
+                        Devanagari: ['ई'],
+                        Gujarati: ['ઈ'],
+                        'Bengali-Assamese': ['ঈ'],
+                        Odia: ['ଈ'],
+                        Tibetan: ['ཨཱི'],
+                        Tamil: ['ஈ'],
+                        Malayalam: ['ഈ'],
+                        Sinhala: ['ඊ'],
+                        Khmer: ['ឦ'],
+                        Thai: ['อี'],
+                        Lao: ['ອີ'],
+                        Telugu: ['ఈ'],
+                        Kannada: ['ಈ'],
+                    },
+                    '-ī': {
+                        Gurmukhi: ['◌ੀ'],
+                        Devanagari: ['◌ी'],
+                        Gujarati: ['◌ી'],
+                        'Bengali-Assamese': ['◌ী'],
+                        Odia: ['◌ୀ'],
+                        Tibetan: ['◌ཱི'],
+                        Tamil: ['◌ீ'],
+                        Malayalam: ['◌ീ'],
+                        Sinhala: ['◌ී'],
+                        Khmer: ['◌ី'],
+                        Thai: ['◌ี'],
+                        Lao: ['◌ີ'],
+                        Telugu: ['◌ీ'],
+                        Kannada: ['◌ೀ'],
+                    },
+                    u: {
+                        Gurmukhi: ['ਉ'],
+                        Devanagari: ['उ'],
+                        Gujarati: ['ઉ'],
+                        'Bengali-Assamese': ['উ'],
+                        Odia: ['ଉ'],
+                        Tibetan: ['ཨུ'],
+                        Tamil: ['உ'],
+                        Malayalam: ['ഉ'],
+                        Sinhala: ['උ'],
+                        Khmer: ['ឧ'],
+                        Thai: ['อุ'],
+                        Lao: ['ອຸ'],
+                        Telugu: ['ఉ'],
+                        Kannada: ['ಉ'],
+                    },
+                    '-u': {
+                        Gurmukhi: ['◌ੁ'],
+                        Devanagari: ['◌ु'],
+                        Gujarati: ['◌ુ'],
+                        'Bengali-Assamese': ['◌ু'],
+                        Odia: ['◌ୁ'],
+                        Tibetan: ['◌ུ'],
+                        Tamil: ['◌ு'],
+                        Malayalam: ['◌ു'],
+                        Sinhala: ['◌ු'],
+                        Khmer: ['◌ុ'],
+                        Thai: ['◌ุ'],
+                        Lao: ['◌ຸ'],
+                        Telugu: ['◌ు'],
+                        Kannada: ['◌ು'],
+                    },
+                    ū: {
+                        Gurmukhi: ['ਊ'],
+                        Devanagari: ['ऊ'],
+                        Gujarati: ['ઊ'],
+                        'Bengali-Assamese': ['ঊ'],
+                        Odia: ['ଊ'],
+                        Tibetan: ['ཨཱུ'],
+                        Tamil: ['ஊ'],
+                        Malayalam: ['ഊ'],
+                        Sinhala: ['ඌ'],
+                        Khmer: ['ឩ'],
+                        Thai: ['อู'],
+                        Lao: ['ອູ'],
+                        Telugu: ['ఊ'],
+                        Kannada: ['ಊ'],
+                    },
+                    '-ū': {
+                        Gurmukhi: ['◌ੂ'],
+                        Devanagari: ['◌ू'],
+                        Gujarati: ['◌ૂ'],
+                        'Bengali-Assamese': ['◌ূ'],
+                        Odia: ['◌ୂ'],
+                        Tibetan: ['◌ཱུ'],
+                        Tamil: ['◌ூ'],
+                        Malayalam: ['◌ൂ'],
+                        Sinhala: ['◌ූ'],
+                        Khmer: ['◌ូ'],
+                        Thai: ['◌ู'],
+                        Lao: ['◌ູ'],
+                        Telugu: ['◌ూ'],
+                        Kannada: ['◌ೂ'],
+                    },
+                    e: {
+                        Gurmukhi: [],
+                        Devanagari: ['ऎ'],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: ['எ'],
+                        Malayalam: ['എ'],
+                        Sinhala: ['එ'],
+                        Khmer: [],
+                        Thai: ['เอะ'],
+                        Lao: ['ແອະ'],
+                        Telugu: ['ఎ'],
+                        Kannada: ['ಎ'],
+                    },
+                    '-e': {
+                        Gurmukhi: [],
+                        Devanagari: ['◌ॆ'],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: ['◌ெ'],
+                        Malayalam: ['◌െ'],
+                        Sinhala: ['◌ෙ'],
+                        Khmer: [],
+                        Thai: ['เ◌ะ'],
+                        Lao: ['ແ◌ະ'],
+                        Telugu: ['◌ె'],
+                        Kannada: ['◌ೆ'],
+                    },
+                    ē: {
+                        Gurmukhi: ['ਏ'],
+                        Devanagari: ['ए'],
+                        Gujarati: ['એ'],
+                        'Bengali-Assamese': ['এ'],
+                        Odia: ['ଏ'],
+                        Tibetan: ['ཨེ'],
+                        Tamil: ['ஏ'],
+                        Malayalam: ['ഏ'],
+                        Sinhala: ['ඒ'],
+                        Khmer: ['ឯ'],
+                        Thai: ['เอ'],
+                        Lao: ['ເອ'],
+                        Telugu: ['ఏ'],
+                        Kannada: ['ಏ'],
+                    },
+                    '-ē': {
+                        Gurmukhi: ['◌ੇ'],
+                        Devanagari: ['◌े'],
+                        Gujarati: ['◌ે'],
+                        'Bengali-Assamese': ['◌ে'],
+                        Odia: ['◌େ'],
+                        Tibetan: ['◌ེ'],
+                        Tamil: ['◌ே'],
+                        Malayalam: ['◌േ'],
+                        Sinhala: ['◌ේ'],
+                        Khmer: ['◌េ'],
+                        Thai: ['เ◌'],
+                        Lao: ['ເ◌'],
+                        Telugu: ['◌ే'],
+                        Kannada: ['◌ೇ'],
+                    },
+                    ai: {
+                        Gurmukhi: ['ਐ'],
+                        Devanagari: ['ऐ'],
+                        Gujarati: ['ઐ'],
+                        'Bengali-Assamese': ['ঐ'],
+                        Odia: ['ଐ'],
+                        Tibetan: ['ཨཻ'],
+                        Tamil: ['ஐ'],
+                        Malayalam: ['ഐ'],
+                        Sinhala: ['ඓ'],
+                        Khmer: ['ឰ'],
+                        Thai: ['ไอ', 'ใอ'],
+                        Lao: ['ໄອ', 'ໃອ'],
+                        Telugu: ['ఐ'],
+                        Kannada: ['ಐ'],
+                    },
+                    '-ai': {
+                        Gurmukhi: ['◌ੈ'],
+                        Devanagari: ['◌ै'],
+                        Gujarati: ['◌ૈ'],
+                        'Bengali-Assamese': ['◌ৈ'],
+                        Odia: ['◌ୈ'],
+                        Tibetan: ['◌ཻ'],
+                        Tamil: ['◌ை'],
+                        Malayalam: ['◌ൈ'],
+                        Sinhala: ['◌ෛ'],
+                        Khmer: ['◌ៃ'],
+                        Thai: ['ไ◌', 'ใ◌'],
+                        Lao: ['ໄ◌', 'ໃ◌'],
+                        Telugu: ['◌ై'],
+                        Kannada: ['◌ೈ'],
+                    },
+                    o: {
+                        Gurmukhi: [],
+                        Devanagari: ['ऒ'],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: ['ஒ'],
+                        Malayalam: ['ഒ'],
+                        Sinhala: ['ඔ'],
+                        Khmer: [],
+                        Thai: ['โอะ'],
+                        Lao: ['ໂອະ'],
+                        Telugu: ['ఒ'],
+                        Kannada: ['ಒ'],
+                    },
+                    '-o': {
+                        Gurmukhi: [],
+                        Devanagari: ['◌ॊ'],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: ['◌ொ'],
+                        Malayalam: ['◌ൊ'],
+                        Sinhala: ['◌ො'],
+                        Khmer: [],
+                        Thai: ['โ◌ะ'],
+                        Lao: ['ໂ◌ະ'],
+                        Telugu: ['◌ొ'],
+                        Kannada: ['◌ೊ'],
+                    },
+                    ō: {
+                        Gurmukhi: ['ਓ'],
+                        Devanagari: ['ओ'],
+                        Gujarati: ['ઓ'],
+                        'Bengali-Assamese': ['ও'],
+                        Odia: ['ଓ'],
+                        Tibetan: ['ཨོ'],
+                        Tamil: ['ஓ'],
+                        Malayalam: ['ഓ'],
+                        Sinhala: ['ඕ'],
+                        Khmer: ['ឱ'],
+                        Thai: ['โอ'],
+                        Lao: ['ໂອ'],
+                        Telugu: ['ఓ'],
+                        Kannada: ['ಓ'],
+                    },
+                    '-ō': {
+                        Gurmukhi: ['◌ੋ'],
+                        Devanagari: ['◌ो'],
+                        Gujarati: ['◌ો'],
+                        'Bengali-Assamese': ['◌ো'],
+                        Odia: ['◌ୋ'],
+                        Tibetan: ['◌ོ'],
+                        Tamil: ['◌ோ'],
+                        Malayalam: ['◌ോ'],
+                        Sinhala: ['◌ෝ'],
+                        Khmer: ['◌ោ'],
+                        Thai: ['โ◌'],
+                        Lao: ['ໂ◌'],
+                        Telugu: ['◌ో'],
+                        Kannada: ['◌ೋ'],
+                    },
+                    au: {
+                        Gurmukhi: ['ਔ'],
+                        Devanagari: ['औ'],
+                        Gujarati: ['ઔ'],
+                        'Bengali-Assamese': ['ঔ'],
+                        Odia: ['ଔ'],
+                        Tibetan: ['ཨཽ'],
+                        Tamil: ['ஔ'],
+                        Malayalam: ['ഔ'],
+                        Sinhala: ['ඖ'],
+                        Khmer: ['ឳ'],
+                        Thai: ['เอา'],
+                        Lao: ['ເອົາ', 'ອາວ'],
+                        Telugu: ['ఔ'],
+                        Kannada: ['ಔ'],
+                    },
+                    '-au': {
+                        Gurmukhi: ['◌ੌ'],
+                        Devanagari: ['◌ौ'],
+                        Gujarati: ['◌ૌ'],
+                        'Bengali-Assamese': ['◌ৌ'],
+                        Odia: ['◌ୌ'],
+                        Tibetan: ['◌ཽ'],
+                        Tamil: ['◌ௌ'],
+                        Malayalam: ['◌ൗ'],
+                        Sinhala: ['◌ෞ'],
+                        Khmer: ['◌ៅ'],
+                        Thai: ['เ◌า'],
+                        Lao: ['ເ◌ົາ', '◌າວ'],
+                        Telugu: ['◌ౌ'],
+                        Kannada: ['◌ೌ'],
+                    },
+                    ə: {
+                        Gurmukhi: [],
+                        Devanagari: [],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: [],
+                        Sinhala: [],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: [],
+                        Kannada: [],
+                    },
+                    '-ə': {
+                        Gurmukhi: [],
+                        Devanagari: [],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: [],
+                        Sinhala: [],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: [],
+                        Kannada: [],
+                    },
+                    r̥: {
+                        Gurmukhi: [],
+                        Devanagari: ['ऋ'],
+                        Gujarati: ['ઋ'],
+                        'Bengali-Assamese': ['ঋ'],
+                        Odia: ['ଋ'],
+                        Tibetan: ['རྀ'],
+                        Tamil: [],
+                        Malayalam: ['ഋ'],
+                        Sinhala: ['ඍ'],
+                        Khmer: ['ឫ'],
+                        Thai: ['ฤ'],
+                        Lao: [],
+                        Telugu: ['ఋ'],
+                        Kannada: ['ಋ'],
+                    },
+                    '-r̥': {
+                        Gurmukhi: [],
+                        Devanagari: ['◌ृ'],
+                        Gujarati: ['◌ૃ'],
+                        'Bengali-Assamese': ['◌ৃ'],
+                        Odia: ['◌ୃ'],
+                        Tibetan: ['◌ྲྀ'],
+                        Tamil: [],
+                        Malayalam: ['◌ൃ'],
+                        Sinhala: ['◌ෘ'],
+                        Khmer: ['◌្ឫ'],
+                        Thai: ['◌ฺฤ'],
+                        Lao: [],
+                        Telugu: ['◌ృ'],
+                        Kannada: ['◌ೃ'],
+                    },
+                    r̥̄: {
+                        Gurmukhi: [],
+                        Devanagari: ['ॠ'],
+                        Gujarati: ['ૠ'],
+                        'Bengali-Assamese': ['ৠ'],
+                        Odia: ['ୠ'],
+                        Tibetan: ['རཱྀ'],
+                        Tamil: [],
+                        Malayalam: ['ൠ'],
+                        Sinhala: ['ඎ'],
+                        Khmer: ['ឬ'],
+                        Thai: ['ฤๅ'],
+                        Lao: [],
+                        Telugu: ['ౠ'],
+                        Kannada: ['ೠ'],
+                    },
+                    '-r̥̄': {
+                        Gurmukhi: [],
+                        Devanagari: ['◌ॄ'],
+                        Gujarati: ['◌ૄ'],
+                        'Bengali-Assamese': ['◌ৄ'],
+                        Odia: ['◌ୄ'],
+                        Tibetan: ['◌ཷ'],
+                        Tamil: [],
+                        Malayalam: ['◌ൄ'],
+                        Sinhala: ['◌ෲ'],
+                        Khmer: ['◌្ឬ'],
+                        Thai: ['◌ฺฤๅ'],
+                        Lao: [],
+                        Telugu: ['◌ౄ'],
+                        Kannada: ['◌ೄ'],
+                    },
+                    l̥: {
+                        Gurmukhi: [],
+                        Devanagari: ['ऌ'],
+                        Gujarati: ['ઌ'],
+                        'Bengali-Assamese': ['ঌ'],
+                        Odia: ['ଌ'],
+                        Tibetan: ['ལྀ'],
+                        Tamil: [],
+                        Malayalam: ['ഌ'],
+                        Sinhala: ['ඏ'],
+                        Khmer: ['ឭ'],
+                        Thai: ['ฦ'],
+                        Lao: [],
+                        Telugu: ['ఌ'],
+                        Kannada: ['ಌ'],
+                    },
+                    '-l̥': {
+                        Gurmukhi: [],
+                        Devanagari: ['◌ॢ'],
+                        Gujarati: ['◌ૢ'],
+                        'Bengali-Assamese': ['◌ৢ'],
+                        Odia: ['◌ୢ'],
+                        Tibetan: ['◌ླྀ'],
+                        Tamil: [],
+                        Malayalam: ['◌ൢ'],
+                        Sinhala: ['◌ෟ'],
+                        Khmer: ['◌្ឭ'],
+                        Thai: ['◌ฺฦ'],
+                        Lao: [],
+                        Telugu: ['◌ౢ'],
+                        Kannada: ['◌ೢ'],
+                    },
+                    l̥̄: {
+                        Gurmukhi: [],
+                        Devanagari: ['ॡ'],
+                        Gujarati: ['ૡ'],
+                        'Bengali-Assamese': ['ৡ'],
+                        Odia: ['ୡ'],
+                        Tibetan: ['ལཱྀ'],
+                        Tamil: [],
+                        Malayalam: ['ൡ'],
+                        Sinhala: ['ඐ'],
+                        Khmer: ['ឮ'],
+                        Thai: ['ฦๅ'],
+                        Lao: [],
+                        Telugu: ['ౡ'],
+                        Kannada: ['ೡ'],
+                    },
+                    '-l̥̄': {
+                        Gurmukhi: [],
+                        Devanagari: ['◌ॣ'],
+                        Gujarati: ['◌ૣ'],
+                        'Bengali-Assamese': ['◌ৣ'],
+                        Odia: ['◌ୣ'],
+                        Tibetan: ['◌ླཱྀ'],
+                        Tamil: [],
+                        Malayalam: ['◌ൣ'],
+                        Sinhala: ['◌ෳ'],
+                        Khmer: ['◌្ឮ'],
+                        Thai: ['◌ฺฦๅ'],
+                        Lao: [],
+                        Telugu: ['◌ౣ'],
+                        Kannada: ['◌ೣ'],
+                    },
+                    ṁ: {
+                        Gurmukhi: ['ਅਂ'],
+                        Devanagari: ['अं'],
+                        Gujarati: ['અં'],
+                        'Bengali-Assamese': ['অং'],
+                        Odia: ['ଅଂ'],
+                        Tibetan: ['ཨཾ'],
+                        Tamil: ['அஂ'],
+                        Malayalam: ['അം'],
+                        Sinhala: ['අං'],
+                        Khmer: ['អំ'],
+                        Thai: ['อํ'],
+                        Lao: ['ອํ'],
+                        Telugu: ['అం'],
+                        Kannada: ['అం'],
+                    },
+                    '-ṁ': {
+                        Gurmukhi: ['◌ਂ'],
+                        Devanagari: ['◌ं'],
+                        Gujarati: ['◌ં'],
+                        'Bengali-Assamese': ['◌ং'],
+                        Odia: ['◌ଂ'],
+                        Tibetan: ['◌ཾ'],
+                        Tamil: ['◌ஂ'],
+                        Malayalam: ['◌ം'],
+                        Sinhala: ['◌ං'],
+                        Khmer: ['◌ំ'],
+                        Thai: ['◌ํ'],
+                        Lao: ['◌ํ'],
+                        Telugu: ['◌ం'],
+                        Kannada: ['◌ಂ'],
+                    },
+                    ḥ: {
+                        Gurmukhi: ['ਅਃ'],
+                        Devanagari: ['अः'],
+                        Gujarati: ['અઃ'],
+                        'Bengali-Assamese': ['অঃ'],
+                        Odia: ['ଅଃ'],
+                        Tibetan: ['ཨཿ'],
+                        Tamil: ['அஃ'],
+                        Malayalam: ['അഃ'],
+                        Sinhala: ['අඃ'],
+                        Khmer: ['អះ'],
+                        Thai: ['อะ', 'อะฮฺ'],
+                        Lao: ['ອະ'],
+                        Telugu: ['అః'],
+                        Kannada: ['అః'],
+                    },
+                    '-ḥ': {
+                        Gurmukhi: ['◌ਃ'],
+                        Devanagari: ['◌ः'],
+                        Gujarati: ['◌ઃ'],
+                        'Bengali-Assamese': ['◌ঃ'],
+                        Odia: ['◌ଃ'],
+                        Tibetan: ['◌ཿ'],
+                        Tamil: ['◌ஃ'],
+                        Malayalam: ['◌ഃ'],
+                        Sinhala: ['◌ඃ'],
+                        Khmer: ['◌ះ'],
+                        Thai: ['◌ะ', '◌ะฮฺ'],
+                        Lao: ['◌ະ'],
+                        Telugu: ['◌ః'],
+                        Kannada: ['◌ಃ'],
+                    },
+                    '-∅': {
+                        Gurmukhi: ['◌੍'],
+                        Devanagari: ['◌्'],
+                        Gujarati: ['◌્'],
+                        'Bengali-Assamese': ['◌্'],
+                        Odia: ['◌୍'],
+                        Tibetan: ['◌྄'],
+                        Tamil: ['◌்'],
+                        Malayalam: ['◌്'],
+                        Sinhala: ['◌්'],
+                        Khmer: ['◌៑'],
+                        Thai: ['◌ฺ', '◌', '◌์'],
+                        Lao: ['◌'],
+                        Telugu: ['◌్'],
+                        Kannada: ['◌್'],
+                    },
+                    '-ŭ': {
+                        Gurmukhi: [],
+                        Devanagari: [],
+                        Gujarati: [],
+                        'Bengali-Assamese': [],
+                        Odia: [],
+                        Tibetan: [],
+                        Tamil: [],
+                        Malayalam: ['◌്'],
+                        Sinhala: [],
+                        Khmer: [],
+                        Thai: [],
+                        Lao: [],
+                        Telugu: [],
+                        Kannada: [],
+                    },
+                },
+                numerals: {
+                    0: {
+                        Gurmukhi: ['੦'],
+                        Devanagari: ['०'],
+                        Gujarati: ['૦'],
+                        'Bengali-Assamese': ['০'],
+                        Odia: ['୦'],
+                        Tibetan: ['༠'],
+                        Tamil: ['೦'],
+                        Malayalam: ['൦'],
+                        Sinhala: [],
+                        Khmer: ['០'],
+                        Thai: ['๐'],
+                        Lao: ['໐'],
+                        Telugu: ['౦'],
+                        Kannada: ['೦'],
+                    },
+                    1: {
+                        Gurmukhi: ['੧'],
+                        Devanagari: ['१'],
+                        Gujarati: ['૧'],
+                        'Bengali-Assamese': ['১'],
+                        Odia: ['୧'],
+                        Tibetan: ['༡'],
+                        Tamil: ['௧'],
+                        Malayalam: ['൧'],
+                        Sinhala: [],
+                        Khmer: ['១'],
+                        Thai: ['๑'],
+                        Lao: ['໑'],
+                        Telugu: ['౧'],
+                        Kannada: ['೧'],
+                    },
+                    2: {
+                        Gurmukhi: ['੨'],
+                        Devanagari: ['२'],
+                        Gujarati: ['૨'],
+                        'Bengali-Assamese': ['২'],
+                        Odia: ['୨'],
+                        Tibetan: ['༢'],
+                        Tamil: ['௨'],
+                        Malayalam: ['൨'],
+                        Sinhala: [],
+                        Khmer: ['២'],
+                        Thai: ['๒'],
+                        Lao: ['໒'],
+                        Telugu: ['౨'],
+                        Kannada: ['೨'],
+                    },
+                    3: {
+                        Gurmukhi: ['੩'],
+                        Devanagari: ['३'],
+                        Gujarati: ['૩'],
+                        'Bengali-Assamese': ['৩'],
+                        Odia: ['୩'],
+                        Tibetan: ['༣'],
+                        Tamil: ['௩'],
+                        Malayalam: ['൩'],
+                        Sinhala: [],
+                        Khmer: ['៣'],
+                        Thai: ['๓'],
+                        Lao: ['໓'],
+                        Telugu: ['౩'],
+                        Kannada: ['೩'],
+                    },
+                    4: {
+                        Gurmukhi: ['੪'],
+                        Devanagari: ['४'],
+                        Gujarati: ['૪'],
+                        'Bengali-Assamese': ['৪'],
+                        Odia: ['୪'],
+                        Tibetan: ['༤'],
+                        Tamil: ['௪'],
+                        Malayalam: ['൪'],
+                        Sinhala: [],
+                        Khmer: ['៤'],
+                        Thai: ['๔'],
+                        Lao: ['໔'],
+                        Telugu: ['౪'],
+                        Kannada: ['೪'],
+                    },
+                    5: {
+                        Gurmukhi: ['੫'],
+                        Devanagari: ['५'],
+                        Gujarati: ['૫'],
+                        'Bengali-Assamese': ['৫'],
+                        Odia: ['୫'],
+                        Tibetan: ['༥'],
+                        Tamil: ['௫'],
+                        Malayalam: ['൫'],
+                        Sinhala: [],
+                        Khmer: ['៥'],
+                        Thai: ['๕'],
+                        Lao: ['໕'],
+                        Telugu: ['౫'],
+                        Kannada: ['೫'],
+                    },
+                    6: {
+                        Gurmukhi: ['੬'],
+                        Devanagari: ['६'],
+                        Gujarati: ['૬'],
+                        'Bengali-Assamese': ['৬'],
+                        Odia: ['୬'],
+                        Tibetan: ['༦'],
+                        Tamil: ['௬'],
+                        Malayalam: ['൬'],
+                        Sinhala: [],
+                        Khmer: ['៦'],
+                        Thai: ['๖'],
+                        Lao: ['໖'],
+                        Telugu: ['౬'],
+                        Kannada: ['೬'],
+                    },
+                    7: {
+                        Gurmukhi: ['੭'],
+                        Devanagari: ['७'],
+                        Gujarati: ['૭'],
+                        'Bengali-Assamese': ['৭'],
+                        Odia: ['୭'],
+                        Tibetan: ['༧'],
+                        Tamil: ['௭'],
+                        Malayalam: ['൭'],
+                        Sinhala: [],
+                        Khmer: ['៧'],
+                        Thai: ['๗'],
+                        Lao: ['໗'],
+                        Telugu: ['౭'],
+                        Kannada: ['೭'],
+                    },
+                    8: {
+                        Gurmukhi: ['੮'],
+                        Devanagari: ['८'],
+                        Gujarati: ['૮'],
+                        'Bengali-Assamese': ['৮'],
+                        Odia: ['୮'],
+                        Tibetan: ['༨'],
+                        Tamil: ['௮'],
+                        Malayalam: ['൮'],
+                        Sinhala: [],
+                        Khmer: ['៨'],
+                        Thai: ['๘'],
+                        Lao: ['໘'],
+                        Telugu: ['౮'],
+                        Kannada: ['೮'],
+                    },
+                    9: {
+                        Gurmukhi: ['੯'],
+                        Devanagari: ['९'],
+                        Gujarati: ['૯'],
+                        'Bengali-Assamese': ['৯'],
+                        Odia: ['୯'],
+                        Tibetan: ['༩'],
+                        Tamil: ['௯'],
+                        Malayalam: ['൯'],
+                        Sinhala: [],
+                        Khmer: ['៩'],
+                        Thai: ['๙'],
+                        Lao: ['໙'],
+                        Telugu: ['౯'],
+                        Kannada: ['೯'],
+                    },
+                },
+            };
+        </script>
+        <script>
+            const LOCAL_STORAGE_KEY = 'brahmi-script-comparator';
+
+            function getFullStorage() {
+                return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) ?? '{}');
+            }
+
+            function setFullStorage(content) {
+                localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(content));
+            }
+
+            function getStorageValue(key, defaultValue) {
+                return getFullStorage()[key] ?? defaultValue;
+            }
+
+            function setStorageValue(key, value) {
+                setFullStorage({ ...getFullStorage(), [key]: value });
+            }
+
+            function parseHtml(html) {
+                const container = document.createElement('div');
+                container.innerHTML = html;
+                return container.firstElementChild;
+            }
+
+            function makeTreeNode(node) {
+                const item = parseHtml('<li><div class="container"><span class="node-label"></span></div></li>');
+                const container = item.querySelector('.container');
+                item.querySelector('.node-label').innerText = node.label;
+
+                if (node.value) {
+                    const nodeValue = parseHtml('<span class="node-value"></span>');
+                    nodeValue.innerText = nodeValue.dataset.value = node.value;
+                    container.appendChild(nodeValue);
+                }
+
+                if ((node.children ?? []).length === 0) return item;
+
+                const list = document.createElement('ul');
+                container.appendChild(list);
+                for (const child of node.children) {
+                    list.appendChild(makeTreeNode(child));
+                }
+                return item;
+            }
+
+            function makeTree(tree) {
+                const root = parseHtml('<ul class="tree"></ul>');
+                root.appendChild(makeTreeNode(tree));
+                return root;
+            }
+
+            function buildLanguageSelector({ id, includeISO, defaultValue, changeListener }) {
+                const languages = Object.keys(data.consonants.ka);
+                const selector = parseHtml(`
+                    <select class="languages">
+                        ${includeISO ? '<option value="">ISO romanization</option>' : ''}
+                        ${languages.map((language) => `<option value="${language}">${language}</option>`).join('')}
+                    </select>
+                `);
+                selector.id = id;
+                selector.value = getStorageValue(id, defaultValue ?? '');
+                selector.addEventListener('change', (e) => {
+                    changeListener(e);
+                    setStorageValue(id, selector.value);
+                });
+                return selector;
+            }
+
+            function buildTreeViewSelector(treeView) {
+                return buildLanguageSelector({
+                    id: 'tree-view-selector',
+                    includeISO: true,
+                    changeListener: (e) => {
+                        fillTreeViewButtons(treeView, e.target.value);
+                    },
+                });
+            }
+
+            function fillTables(view, makeElement) {
+                for (const table of view.querySelectorAll('table')) {
+                    for (const cell of table.querySelectorAll('[data-value]')) {
+                        makeElement({
+                            table,
+                            cell,
+                            value: cell.dataset.value,
+                            chars: data[table.dataset.content][cell.dataset.value],
+                        });
+                    }
+                }
+            }
+
+            function fillTreeViewButtons(treeView, language) {
+                let defaultActiveTarget;
+                fillTables(treeView, ({ table, cell, value, chars }) => {
+                    defaultActiveTarget ??= value;
+                    const previousButton = cell.firstElementChild;
+                    const button = document.createElement('button');
+                    button.innerText = formatChars(chars[language], value);
+                    button.addEventListener('click', () => {
+                        for (const otherButton of document.querySelectorAll('button')) {
+                            otherButton.classList.remove('active');
+                        }
+                        for (const nodeValue of document.querySelectorAll('.tree .node-value')) {
+                            const nodeLanguage = nodeValue.previousElementSibling.innerText;
+                            nodeValue.innerText = nodeValue.dataset.value = formatChars(chars[nodeLanguage]);
+                        }
+                        button.classList.add('active');
+                        setStorageValue('table-button', value);
+                    });
+                    if (previousButton?.classList.contains('active')) button.classList.add('active');
+                    button.setAttribute('title', value);
+
+                    cell.innerHTML = '';
+                    cell.appendChild(button);
+                });
+                const activeTarget = getStorageValue('table-button', defaultActiveTarget);
+                document.querySelector(`#tree-view [data-value="${activeTarget}"] button`).click();
+            }
+
+            function fillTableView(tableView, language1, language2) {
+                fillTables(tableView, ({ cell, value, chars }) => {
+                    cell.innerHTML = `<table>
+                        <tr><td>${formatChars(chars[language1])}</td></tr>
+                        <tr><td>${formatChars(chars[language2])}</td></tr>
+                    </table>`;
+                    cell.firstElementChild.setAttribute('title', value);
+                });
+            }
+
+            function formatChars(chars, defaultValue = '∅') {
+                return transformIndependentVowelForDisplay(chars?.join(' / ') || defaultValue);
+            }
+
+            function transformIndependentVowelForDisplay(vowel) {
+                // Firefox fails to apply Indic diacritics to characters of a different script
+                // and displays its own dotted circle instead.
+                // Chrome has the same issue in specific cases that we avoid in other ways,
+                // but also fails to display a dotted circle outside of these cases
+                // so we can’t unify the fix across browsers.
+                if (!/Firefox\/[^ ]+$/.test(navigator.userAgent)) return vowel;
+                return /(\p{General_Category=Spacing_Mark}|\p{General_Category=Nonspacing_Mark})/u.test(vowel) &&
+                    !/(\p{Script=Thai}|\p{Script=Lao})/u.test(vowel)
+                    ? vowel.replace('◌', '')
+                    : vowel;
+            }
+
+            function showView(displayed, views) {
+                for (const view of views) {
+                    view.classList.add('hidden');
+                }
+                displayed.classList.remove('hidden');
+            }
+
+            function setupViewSwitch(radioName, views) {
+                const radios = [...document.querySelectorAll(`[name="${radioName}"]`)];
+                radios.forEach((radio, index) => {
+                    radio.addEventListener('change', (e) => {
+                        showView(views[index], views);
+                        setStorageValue(radioName, radio.value);
+                    });
+                });
+                showView(views[0], views);
+                const activeRadio = getStorageValue(radioName, radios[0].value);
+                document.querySelector(`[name="${radioName}"][value="${activeRadio}"]`).click();
+            }
+
+            function makeTreeView() {
+                const treeView = document.getElementById('tree-view');
+                const treeWrapper = document.getElementById('tree-wrapper');
+                const treeControls = document.getElementById('tree-controls');
+
+                const treeViewSelector = buildTreeViewSelector(treeView);
+                const simplifiedTreeNode = makeTree(simplifiedTree);
+                const completeTreeNode = makeTree(completeTree);
+                for (const treeNode of [simplifiedTreeNode, completeTreeNode]) {
+                    treeNode.classList.add('hidden');
+                    treeWrapper.appendChild(treeNode);
+                }
+                setupViewSwitch('tree-choice', [simplifiedTreeNode, completeTreeNode]);
+                treeControls.appendChild(treeViewSelector);
+                treeControls.appendChild(document.createElement('br'));
+                treeControls.appendChild(document.importNode(document.getElementById('tables').content, true));
+                fillTreeViewButtons(treeView, treeViewSelector.value);
+
+                return treeView;
+            }
+
+            function makeTableView() {
+                const tableView = document.getElementById('table-view');
+                const updateTableView = () =>
+                    fillTableView(tableView, tableViewSelectors[0].value, tableViewSelectors[1].value);
+                const tableViewSelectors = ['Devanagari', 'Gujarati'].map((language, index) => {
+                    const tableViewSelector = buildLanguageSelector({
+                        id: `table-view-selector-${index + 1}`,
+                        includeISO: false,
+                        defaultValue: language,
+                        changeListener: updateTableView,
+                    });
+                    tableView.appendChild(tableViewSelector);
+                    tableView.appendChild(document.createElement('br'));
+                    return tableViewSelector;
+                });
+                tableView.appendChild(document.importNode(document.getElementById('tables').content, true));
+                updateTableView();
+
+                return tableView;
+            }
+
+            setupViewSwitch('view-choice', [makeTreeView(), makeTableView()]);
+        </script>
+        <script>
+            // Scraper for https://en.wikipedia.org/w/index.php?title=Brahmic_scripts&oldid=1346238697
+            function scrape() {
+                var langs = [
+                    'Gurmukhi',
+                    'Devanagari',
+                    'Gujarati',
+                    'Bengali-Assamese',
+                    'Odia',
+                    'Tibetan',
+                    'Tamil',
+                    'Malayalam',
+                    'Sinhala',
+                    'Khmer',
+                    'Thai',
+                    'Lao',
+                    'Telugu',
+                    'Kannada',
+                ];
+                var findTable = (sectionId) => {
+                    let currentElement = document.getElementById(sectionId).parentElement.nextElementSibling;
+                    let table;
+                    while (!currentElement.classList.contains('mw-heading')) {
+                        if (currentElement.tagName.toLowerCase() === 'table') return currentElement;
+                        table = currentElement.querySelector('table');
+                        if (table) return table;
+                        currentElement = currentElement.nextElementSibling;
+                    }
+                };
+                var getLangIndex = (table, lang) =>
+                    [...table.querySelectorAll('tbody th:nth-of-type(1)')].findIndex(
+                        (el) =>
+                            el.innerText
+                                .replace(/\s/g, '')
+                                .replace(/\[.\]$/, '')
+                                .replace('–', '-') === lang,
+                    );
+                var extractData = (sectionId, headerSelector, offset) => {
+                    const table = findTable(sectionId);
+                    const langIndices = langs.reduce(
+                        (acc, lang) => ({ ...acc, [lang]: getLangIndex(table, lang) }),
+                        {},
+                    );
+                    return [...table.querySelector(headerSelector).querySelectorAll('th')].slice(offset).reduce(
+                        (acc, e, index) => ({
+                            ...acc,
+                            [e.innerText]: Object.entries(langIndices).reduce(
+                                (acc, [key, value]) => ({
+                                    ...acc,
+                                    [key]: (() => {
+                                        if (value === -1) return [];
+                                        const charEl = table.querySelectorAll(`tr:nth-of-type(${value + 1}) td`)[index];
+                                        const txt = charEl.innerText.trim();
+                                        if (!txt || !!charEl.getAttribute('style')) return [];
+                                        return txt
+                                            .replace(/\(|\)|\[.\]/g, '')
+                                            .split(/\s+|,|\//)
+                                            .map((char) => char.trim());
+                                    })(),
+                                }),
+                                {},
+                            ),
+                        }),
+                        {},
+                    );
+                };
+                var replaceKeys = (o, regexp, replacement) => {
+                    Object.keys(o).forEach((key) => {
+                        const before = o[key];
+                        delete o[key];
+                        o[key.replace(regexp, replacement)] = before;
+                    });
+                };
+                var cleanupVowelData = (data) => {
+                    const dependentKeys = Object.keys(data).filter((key) => key.startsWith('-'));
+                    const baseLetters = { ...data['-a'] };
+                    for (const key of dependentKeys) {
+                        data[key] = Object.entries(data[key]).reduce(
+                            (acc, [key, value]) => ({
+                                ...acc,
+                                [key]: value.map((cluster) => cluster.replace(baseLetters[key][0].charAt(0), '◌')),
+                            }),
+                            {},
+                        );
+                    }
+                };
+                var result = {
+                    consonants: extractData('Consonants', 'thead tr', 1),
+                    vowels: extractData('Vowels', 'tbody tr:nth-of-type(2)', 0),
+                    numerals: extractData('Numerals', 'tbody tr:nth-of-type(1)', 1),
+                };
+                replaceKeys(result.consonants, 'pha/fa', 'pha');
+                replaceKeys(result.vowels, /^k(.*)$/, (_, captured) => `-${captured || '∅'}`);
+                replaceKeys(result.vowels, /(aḥ|aṁ)/, (_, captured) => captured.replace('a', ''));
+                cleanupVowelData(result.vowels);
+                // Manual fixes
+                result.consonants['ẏa'].Telugu = [];
+                result.consonants['ṉa'].Telugu = [];
+                result.vowels['-∅'].Gujarati = [result.vowels['-∅'].Gujarati[0]];
+                return result;
+            }
+        </script>
+    </body>
+</html>
