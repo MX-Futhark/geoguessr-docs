@@ -6,8 +6,8 @@
 // @author       MX-Futhark
 // @match        https://super-duper.fr/quiz2024/cities.php?*
 // @grant        none
-// @updateURL    https://github.com/MX-Futhark/geoguessr-docs/raw/master/quizz-data/super-duper-japanese-cities-kanji.user.js
-// @downloadURL  https://github.com/MX-Futhark/geoguessr-docs/raw/master/quizz-data/super-duper-japanese-cities-kanji.user.js
+// @updateURL    https://github.com/MX-Futhark/geoguessr-docs/raw/master/quiz-data/super-duper-japanese-cities-kanji.user.js
+// @downloadURL  https://github.com/MX-Futhark/geoguessr-docs/raw/master/quiz-data/super-duper-japanese-cities-kanji.user.js
 // ==/UserScript==
 
 (function() {
@@ -15,12 +15,12 @@
 
     const log = console.log;
     let content;
-    console.log = function (quizz) { // super-duper logs the quizz content when it starts
+    console.log = function (quiz) { // super-duper logs the quiz content when it starts
         log.apply(console, arguments);
-        if (!Array.isArray(quizz) || !('name_standard' in quizz[0])) return;
+        if (!Array.isArray(quiz) || !('name_standard' in quiz[0])) return;
 
-        content = quizz;
-        for (const entry of quizz) {
+        content = quiz;
+        for (const entry of quiz) {
             entry.name_standard = replacements[entry.name_standard] ?? entry.name_standard;
         }
     };
