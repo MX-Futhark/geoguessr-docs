@@ -6,8 +6,8 @@
 // @author       MX-Futhark
 // @match        https://super-duper.fr/quiz2024/cities.php?*
 // @grant        none
-// @updateURL    https://github.com/MX-Futhark/geoguessr-docs/raw/master/quiz-data/super-duper-japanese-cities-kanji.user.js
-// @downloadURL  https://github.com/MX-Futhark/geoguessr-docs/raw/master/quiz-data/super-duper-japanese-cities-kanji.user.js
+// @updateURL    https://github.com/MX-Futhark/geoguessr-docs/raw/master/userscripts/super-duper-japanese-cities-kanji.user.js
+// @downloadURL  https://github.com/MX-Futhark/geoguessr-docs/raw/master/userscripts/super-duper-japanese-cities-kanji.user.js
 // ==/UserScript==
 
 (function() {
