@@ -150,6 +150,12 @@ This document contains maps highlighting toponymical patterns in French commune 
 
 ![mesnil](./img/mesnil.png)
 
+### La Ferté
+
+**Regexp**: `^la ferté(-|$)`
+
+![La Ferté](./img/la_ferte.png)
+
 ### fontaine
 
 **Regexp**: `fontaine`
@@ -394,6 +400,18 @@ N.B. Includes -ghen, -hoffen, -hausen, etc.
 
 ![-ex](./img/ex.png)
 
+### -é
+
+**Regexp**: `é($|-)`
+
+![-é](./img/e_acute.png)
+
+### -eu
+
+**Regexp**: `eu($|-)`
+
+![-eu](./img/eu.png)
+
 ### -euil
 
 **Regexp**: `euil($|-)`
@@ -411,6 +429,18 @@ N.B. Includes -ghen, -hoffen, -hausen, etc.
 **Regexp**: `ol($|-)`
 
 ![-ol](./img/ol.png)
+
+### -ot
+
+**Regexp**: `ot($|-)`
+
+![-ot](./img/ot.png)
+
+### -tot
+
+**Regexp**: `tot($|-)`
+
+![-tot](./img/tot.png)
 
 **Regexp**: `nx($|-)`
 
