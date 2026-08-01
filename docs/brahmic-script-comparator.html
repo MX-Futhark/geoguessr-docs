@@ -2287,7 +2287,7 @@
                         Tibetan: ['༠'],
                         Tamil: ['೦'],
                         Malayalam: ['൦'],
-                        Sinhala: [],
+                        Sinhala: ['෦'],
                         Khmer: ['០'],
                         Thai: ['๐'],
                         Lao: ['໐'],
@@ -2303,7 +2303,7 @@
                         Tibetan: ['༡'],
                         Tamil: ['௧'],
                         Malayalam: ['൧'],
-                        Sinhala: [],
+                        Sinhala: ['෧', '𑇡'],
                         Khmer: ['១'],
                         Thai: ['๑'],
                         Lao: ['໑'],
@@ -2319,7 +2319,7 @@
                         Tibetan: ['༢'],
                         Tamil: ['௨'],
                         Malayalam: ['൨'],
-                        Sinhala: [],
+                        Sinhala: ['෨', '𑇢'],
                         Khmer: ['២'],
                         Thai: ['๒'],
                         Lao: ['໒'],
@@ -2335,7 +2335,7 @@
                         Tibetan: ['༣'],
                         Tamil: ['௩'],
                         Malayalam: ['൩'],
-                        Sinhala: [],
+                        Sinhala: ['෩', '𑇣'],
                         Khmer: ['៣'],
                         Thai: ['๓'],
                         Lao: ['໓'],
@@ -2351,7 +2351,7 @@
                         Tibetan: ['༤'],
                         Tamil: ['௪'],
                         Malayalam: ['൪'],
-                        Sinhala: [],
+                        Sinhala: ['෪', '𑇤'],
                         Khmer: ['៤'],
                         Thai: ['๔'],
                         Lao: ['໔'],
@@ -2367,7 +2367,7 @@
                         Tibetan: ['༥'],
                         Tamil: ['௫'],
                         Malayalam: ['൫'],
-                        Sinhala: [],
+                        Sinhala: ['෫', '𑇥'],
                         Khmer: ['៥'],
                         Thai: ['๕'],
                         Lao: ['໕'],
@@ -2383,7 +2383,7 @@
                         Tibetan: ['༦'],
                         Tamil: ['௬'],
                         Malayalam: ['൬'],
-                        Sinhala: [],
+                        Sinhala: ['෬', '𑇦'],
                         Khmer: ['៦'],
                         Thai: ['๖'],
                         Lao: ['໖'],
@@ -2399,7 +2399,7 @@
                         Tibetan: ['༧'],
                         Tamil: ['௭'],
                         Malayalam: ['൭'],
-                        Sinhala: [],
+                        Sinhala: ['෭', '𑇧'],
                         Khmer: ['៧'],
                         Thai: ['๗'],
                         Lao: ['໗'],
@@ -2415,7 +2415,7 @@
                         Tibetan: ['༨'],
                         Tamil: ['௮'],
                         Malayalam: ['൮'],
-                        Sinhala: [],
+                        Sinhala: ['෮', '𑇨'],
                         Khmer: ['៨'],
                         Thai: ['๘'],
                         Lao: ['໘'],
@@ -2431,7 +2431,7 @@
                         Tibetan: ['༩'],
                         Tamil: ['௯'],
                         Malayalam: ['൯'],
-                        Sinhala: [],
+                        Sinhala: ['෯', '𑇩'],
                         Khmer: ['៩'],
                         Thai: ['๙'],
                         Lao: ['໙'],
@@ -2751,6 +2751,11 @@
                 result.consonants['ẏa'].Telugu = [];
                 result.consonants['ṉa'].Telugu = [];
                 result.vowels['-∅'].Gujarati = [result.vowels['-∅'].Gujarati[0]];
+                for (const numeral of Object.keys(result.numerals)) {
+                    result.numerals[numeral].Sinhala.push(...[
+                        '෦', '෧/𑇡', '෨/𑇢', '෩/𑇣', '෪/𑇤', '෫/𑇥', '෬/𑇦', '෭/𑇧', '෮/𑇨', '෯/𑇩'
+                    ][numeral].split('/'));
+                }
                 return result;
             }
         </script>
