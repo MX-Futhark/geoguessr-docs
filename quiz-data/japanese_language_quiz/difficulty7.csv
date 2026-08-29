@@ -155,7 +155,6 @@
 東広島,Higashihiroshima
 安芸高田,Akitakata
 江田島,Etajima
-札幌,Sapporo
 旭川,Asahikawa
 室蘭,Muroran
 岩見沢,Iwamizawa
@@ -173,7 +172,6 @@
 石狩,Ishikari
 士別,Shibetsu
 北見,Kitami
-神戸,Godo
 姫路,Himeji
 西宮,Nishinomiya
 芦屋,Ashiya
@@ -205,7 +203,6 @@
 守谷,Moriya
 常陸大宮,Hitachiomiya
 那珂,Naka
-坂東,Bando
 稲敷,Inashiki
 筑西,Chikusei
 かすみがうら,Kasumigaura
@@ -290,7 +287,6 @@
 京丹後,Kyotango
 南丹,Nantan
 木津川,Kizugawa
-四日市,Yokkaichi
 松阪,Matsusaka
 桑名,Kuwana
 名張,Nabari
@@ -316,7 +312,6 @@
 富谷,Tomiya
 宮崎,Miyazaki
 延岡,Nobeoka
-日南,Nichinan
 小林,Kobayashi
 串間,Kushima
 西都,Saito
@@ -367,7 +362,6 @@
 南魚沼,Minamiuonuma
 三条,Sanjo
 五泉,Gosen
-別府,Beppu
 中津,Nakatsu
 日田,Hita
 臼杵,Usuki
@@ -457,7 +451,6 @@
 長浜,Nagahama
 松江,Matsue
 出雲,Izumo
-江津,Gotsu
 雲南,Unnan
 浜田,Hamada
 大田,Ota
@@ -589,7 +582,6 @@
 厚真,Atsuma
 安平,Abira
 むかわ,Mukawa
-平取,Biratori
 新冠,Niikappu
 浦河,Urakawa
 えりも,Erimo
@@ -650,7 +642,6 @@
 鶴田,Tsuruta
 中泊,Nakadomari
 七戸,Shichinohe
-六戸,Rokunohe
 東北,Tohoku
 おいらせ,Oirase
 大間,Oma
@@ -703,7 +694,6 @@
 下郷,Shimogo
 南会津,Minamiaizu
 西会津,Nishiaizu
-会津坂下,Aizubange
 矢吹,Yabuki
 棚倉,Tanagura
 石川,Ishikawa
@@ -836,6 +826,7 @@
 大山崎,Oyamazaki
 久御山,Kumiyama
 井手,Ide
+宇治田原,Ujitawara
 京丹波,Kyotamba
 伊根,Ine
 島本,Shimamoto
@@ -854,6 +845,7 @@
 新温泉,Shin'onsen
 田原本,Tawaramoto
 高取,Takatori
+王寺,Oji
 吉野,Yoshino
 大淀,Oyodo
 下市,Shimoichi
@@ -949,7 +941,6 @@
 吉野ヶ里,Yoshinogari
 みやき,Miyaki
 江北,Kohoku
-太良,Tara
 長与,Nagayo
 川棚,Kawatana
 波佐見,Hasami
@@ -998,11 +989,9 @@
 泊,Tomari
 赤井川,Akaigawa
 西興部,Nishiokoppe
-中札内,Nakasatsunai
 更別,Sarabetsu
 鶴居,Tsurui
 西目屋,Nishimeya
-六ヶ所,Rokkasho
 佐井,Sai
 新郷,Shingo
 九戸,Kunohe
@@ -1037,7 +1026,6 @@
 関川,Sekikawa
 粟島浦,Awashimaura
 舟橋,Funahashi
-道志,Doshi
 山中湖,Yamanakako
 鳴沢,Narusawa
 川上,Kawakami
@@ -1053,6 +1041,7 @@
 下條,Shimojo
 天龍,Tenryu
 大鹿,Oshika
+王滝,Otaki
 大桑,Okuwa
 筑北,Chikuhoku
 野沢温泉,Nozawaonsen
@@ -1070,6 +1059,7 @@
 北山,Kitayama
 西粟倉,Nishiawakura
 北川,Kitagawa
+東峰,Toho
 赤,Aka
 南阿蘇,Minamiaso
 水上,Mizukami
@@ -1078,7 +1068,6 @@
 西米良,Nishimera
 諸塚,Morotsuka
 十島,Toshima
-大宜味,Ogimi
 東,Higashi
 宜野座,Ginoza
 伊江,Ie
