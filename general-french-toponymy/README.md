@@ -162,6 +162,12 @@ This document contains maps highlighting toponymical patterns in French commune 
 
 ![fontaine](./img/fontaine.png)
 
+### bastide
+
+**Regexp**: `bastide`
+
+![bastide](./img/bastide.png)
+
 ## Natural regions
 
 Natural regions that are not featured in [Most Useful Natural Regions of France](../natural-regions-of-france/README.md) due to not matching the desired pattern.
