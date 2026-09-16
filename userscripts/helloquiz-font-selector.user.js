@@ -19,7 +19,7 @@
         Khmer: ['Moul'],
         Lao: ['Noto Serif Lao', 'Noto Sans Lao'],
         Arabic: ['Noto Sans Arabic', 'Noto Kufi Arabic', 'Noto Nastaliq Urdu'],
-        Hebrew: ['Noto Serif Hebrew'],
+        Hebrew: ['Noto Serif Hebrew', 'Noto Rashi Hebrew', 'Playpen Sans Hebrew'],
         Devanagari: ['Teko'],
         Telugu: ['Dhurjati'],
         Sinhala: ['Gemunu Libre'],
