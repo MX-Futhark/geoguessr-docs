@@ -1277,7 +1277,7 @@
                         Malayalam: ['പ'],
                         Sinhala: ['ප'],
                         Khmer: ['ប'],
-                        Thai: ['ป', 'บ'],
+                        Thai: ['บ', 'ป'],
                         Lao: ['ບ', 'ປ'],
                         Telugu: ['ప'],
                         Kannada: ['ಪ'],
@@ -2709,7 +2709,8 @@
                                         return txt
                                             .replace(/\(|\)|\[.\]/g, '')
                                             .split(/\s+|,|\//)
-                                            .map((char) => char.trim());
+                                            .map((char) => char.trim())
+                                            .toSorted();
                                     })(),
                                 }),
                                 {},
